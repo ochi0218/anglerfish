@@ -1,0 +1,35 @@
+%h1 Listing fishing_logs
+
+%table
+  %tr
+    %th Fish name
+    %th Fish length
+    %th Fish weight
+    %th Fishing point name
+    %th Fishing method
+    %th Fishing date
+    %th Fishing time
+    %th Bait
+    %th Comment
+    %th
+    %th
+    %th
+
+  - @fishing_logs.each do |fishing_log|
+    %tr
+      %td= fishing_log.fish_name
+      %td= fishing_log.fish_length
+      %td= fishing_log.fish_weight
+      %td= fishing_log.fishing_point_name
+      %td= fishing_log.fishing_method
+      %td= fishing_log.fishing_date
+      %td= fishing_log.fishing_time
+      %td= fishing_log.bait
+      %td= fishing_log.comment
+      %td= link_to 'Show', fishing_log
+      %td= link_to 'Edit', edit_fishing_log_path(fishing_log)
+      %td= link_to 'Destroy', fishing_log, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Fishing log', new_fishing_log_path

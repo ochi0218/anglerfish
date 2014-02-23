@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  fish_name: MyString
+  fish_length: 1.5
+  fish_weight: 1.5
+  fishing_point_name: MyString
+  fishing_method: MyString
+  fishing_date: 2014-02-17
+  fishing_time: 2014-02-17 23:53:06
+  bait: MyString
+  comment: MyString
+
+two:
+  fish_name: MyString
+  fish_length: 1.5
+  fish_weight: 1.5
+  fishing_point_name: MyString
+  fishing_method: MyString
+  fishing_date: 2014-02-17
+  fishing_time: 2014-02-17 23:53:06
+  bait: MyString
+  comment: MyString

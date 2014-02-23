@@ -1,0 +1,33 @@
+%p#notice= notice
+
+%p
+  %b Fish name:
+  = @fishing_log.fish_name
+%p
+  %b Fish length:
+  = @fishing_log.fish_length
+%p
+  %b Fish weight:
+  = @fishing_log.fish_weight
+%p
+  %b Fishing point name:
+  = @fishing_log.fishing_point_name
+%p
+  %b Fishing method:
+  = @fishing_log.fishing_method
+%p
+  %b Fishing date:
+  = @fishing_log.fishing_date
+%p
+  %b Fishing time:
+  = @fishing_log.fishing_time
+%p
+  %b Bait:
+  = @fishing_log.bait
+%p
+  %b Comment:
+  = @fishing_log.comment
+
+= link_to 'Edit', edit_fishing_log_path(@fishing_log)
+\|
+= link_to 'Back', fishing_logs_path

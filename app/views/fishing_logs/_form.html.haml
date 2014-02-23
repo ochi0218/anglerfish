@@ -1,0 +1,37 @@
+= form_for @fishing_log do |f|
+  - if @fishing_log.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@fishing_log.errors.count, "error")} prohibited this fishing_log from being saved:"
+      %ul
+        - @fishing_log.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :fish_name
+    = f.text_field :fish_name
+  .field
+    = f.label :fish_length
+    = f.text_field :fish_length
+  .field
+    = f.label :fish_weight
+    = f.text_field :fish_weight
+  .field
+    = f.label :fishing_point_name
+    = f.text_field :fishing_point_name
+  .field
+    = f.label :fishing_method
+    = f.text_field :fishing_method
+  .field
+    = f.label :fishing_date
+    = f.date_select :fishing_date
+  .field
+    = f.label :fishing_time
+    = f.time_select :fishing_time
+  .field
+    = f.label :bait
+    = f.text_field :bait
+  .field
+    = f.label :comment
+    = f.text_field :comment
+  .actions
+    = f.submit 'Save'

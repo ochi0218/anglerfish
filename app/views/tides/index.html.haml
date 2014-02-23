@@ -1,0 +1,21 @@
+.row
+  .col-md-8
+    .btn-group
+      = button_tag(raw('<i class="glyphicon glyphicon-calendar"></i> 2012/02/01'), class: 'btn btn-info')
+      = button_tag(raw('<i class="glyphiconcon glyphicon-globe "></i> 松山'), class: 'btn btn-info')
+  .col-md-4
+    = button_to(t('tides.index.button.new_fishing_logs'), new_fishing_log_path, method: :get, class: 'btn btn-primary')
+.row
+  .col-md-5.tide-info
+    %h3 大潮
+  .col-md-7.tide-relation-info
+    .moon_age
+      = image_tag('/assets/weather-icons/svg/Moon-Full.svg')
+      %span 'TODO 月齢を表示'
+    .sunrise
+      = image_tag('/assets/weather-icons/svg/Sunrise.svg')
+      %span 'TODO 日の出時間を表示'
+    .sunset
+      = image_tag('/assets/weather-icons/svg/Sunset.svg')
+      %span 'TODO 日の入時間を表示'
+

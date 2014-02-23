@@ -1,7 +1,7 @@
-en:
+ja:
   simple_form:
-    "yes": 'Yes'
-    "no": 'No'
+    "yes": 'はい'
+    "no": 'いいえ'
     required:
       text: '必須です。'
       mark: '*'
@@ -10,17 +10,34 @@ en:
       # html: '<abbr title="required">*</abbr>'
     error_notification:
       default_message: "以下の問題を確認してください。"
-    # Labels and hints examples
-    # labels:
-    #   defaults:
-    #     password: 'Password'
-    #   user:
-    #     new:
-    #       email: 'E-mail to sign in.'
-    #     edit:
-    #       email: 'E-mail.'
-    # hints:
-    #   defaults:
-    #     username: 'User name to sign in.'
-    #     password: 'No special characters, please.'
-
+    helpers:
+      titles:
+        new: '%{model} 作成'
+        edit: '%{model} 編集'
+    hints:
+      fishing_log:
+        fish_name: '例）メバル、鯛など'
+    placeholders:
+      fishing_log:
+        fish_name: '魚種を入力してください。'
+        fish_length: 'サイズを入力してください。'
+        fish_weight: '重さを入力してください。'
+        fishing_point_name: '釣果場所を入力してください。'
+        fishing_method: '仕掛けを入力してください。'
+        fishing_date: '釣果日を入力してください。'
+        fishing_time: '釣果時刻を入力してください。'
+        bait: 'エサを入力してください。'
+        comment: 'コメントを入力してください。'
+        submit: '登録を入力してください。'
+    labels:
+      fishing_log:
+        fish_name: '魚種'
+        fish_length: 'サイズ'
+        fish_weight: '重さ'
+        fishing_point_name: '釣果場所'
+        fishing_method: '仕掛け'
+        fishing_date: '釣果日'
+        fishing_time: '釣果時刻'
+        bait: 'エサ'
+        comment: 'コメント'
+        submit: '登録'

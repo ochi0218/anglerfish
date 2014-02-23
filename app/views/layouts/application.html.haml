@@ -7,13 +7,22 @@
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
   %body
-    .container
-      .navbar.navbar-default
-        .container-fluid
-          .navbar-header
-            %a.navbar-brand{href: "#"} test
-      .contents
-        = yield
-      .fotter
+    %header#header.navbar.navbar-inverse.navbar-fixed-top
+      .container-fluid
+        .navbar-header
+          %a.navbar-brand{href: "#"} #{t('site_title')}
+    .cotainer-fluid
+      .row
+        #sideber.col-sm-3.col-md-2.sidebar
+          %ul.nav.nav-sidebar
+            %li.active #{link_to('Home', root_path)}
+            %li #{link_to('List', fishing_logs_path)}
+        #main.col-sm-9.col-sm-offset-3.col-md-10.col-md-offset-2.main
+          - if @page_title
+            .page_title
+              %h1 #{@page_title}
+          .contents
+            = yield
+    %fotter#fotter.fotter
 
 

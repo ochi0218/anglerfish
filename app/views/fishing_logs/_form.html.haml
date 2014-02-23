@@ -1,10 +1,6 @@
 = simple_form_for @fishing_log, :html => { :class => 'form-horizontal' } do |f|
-  - if @fishing_log.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@fishing_log.errors.count, "error")} prohibited this fishing_log from being saved:"
-      %ul
-        - @fishing_log.errors.full_messages.each do |msg|
-          %li= msg
+  - if notification = f.error_notification
+    = notification
 
   = f.input :fish_name
   = f.input :fish_length

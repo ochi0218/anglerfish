@@ -1,16 +1,16 @@
-%h1 Listing fishing_logs
+- @page_title = t('helpers.titles.list', model: t('activerecord.models.fishing_log'))
+- @page_category = 'fishing_logs'
 
-%table
+%table.table.table-striped.table-hover
   %tr
-    %th Fish name
-    %th Fish length
-    %th Fish weight
-    %th Fishing point name
-    %th Fishing method
-    %th Fishing date
-    %th Fishing time
-    %th Bait
-    %th Comment
+    %th #{t('activerecord.attributes.fishing_log.fish_name')}
+    %th #{t('activerecord.attributes.fishing_log.fish_length')}
+    %th #{t('activerecord.attributes.fishing_log.fish_weight')}
+    %th #{t('activerecord.attributes.fishing_log.fishing_point_name')}
+    %th #{t('activerecord.attributes.fishing_log.fishing_method')}
+    %th #{t('activerecord.attributes.fishing_log.fishing_date')}
+    %th #{t('activerecord.attributes.fishing_log.fishing_time')}
+    %th #{t('activerecord.attributes.fishing_log.bait')}
     %th
     %th
     %th
@@ -18,18 +18,17 @@
   - @fishing_logs.each do |fishing_log|
     %tr
       %td= fishing_log.fish_name
-      %td= fishing_log.fish_length
-      %td= fishing_log.fish_weight
+      %td= number_to_human fishing_log.fish_length, units: { unit: 'cm', thousand: 'm' }
+      %td= number_to_human fishing_log.fish_weight, units: { unit: 'g', thousand: 'kg' }
       %td= fishing_log.fishing_point_name
       %td= fishing_log.fishing_method
-      %td= fishing_log.fishing_date
-      %td= fishing_log.fishing_time
+      %td= l fishing_log.fishing_date, format: :long
+      %td= l fishing_log.fishing_time, format: :time_only
       %td= fishing_log.bait
-      %td= fishing_log.comment
-      %td= link_to 'Show', fishing_log
-      %td= link_to 'Edit', edit_fishing_log_path(fishing_log)
-      %td= link_to 'Destroy', fishing_log, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %td= link_to t('helpers.actions.show'), fishing_log, class: 'btn btn-default btn-xs'
+      %td= link_to raw("<i class=\"glyphicon glyphicon-edit\"></i> #{t('helpers.actions.edit')}"), edit_fishing_log_path(fishing_log), class: 'btn btn-default btn-xs'
+      %td= link_to raw("<i class=\"glyphicon glyphicon-trash\"></i> #{t('helpers.actions.destroy')}"), fishing_log, :method => :delete, :data => { :confirm => t('helpers.confirm.delete') }, class: 'btn btn-danger btn-xs btn-white'
 
 %br
 
-= link_to 'New Fishing log', new_fishing_log_path
+= link_to(raw("<i class=\"glyphicon glyphicon-plus\"></i> #{t('fishing_logs.list.new_fishing_log')}"), new_fishing_log_path, class: 'btn btn-primary btn-white')

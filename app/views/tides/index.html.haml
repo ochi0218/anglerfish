@@ -1,10 +1,12 @@
+- @page_category = 'home'
+
 .row
   .col-md-8
     .btn-group
       = button_tag(raw('<i class="glyphicon glyphicon-calendar"></i> 2012/02/01'), class: 'btn btn-info')
       = button_tag(raw('<i class="glyphiconcon glyphicon-globe "></i> 松山'), class: 'btn btn-info')
   .col-md-4
-    = button_to(t('tides.index.button.new_fishing_logs'), new_fishing_log_path, method: :get, class: 'btn btn-primary')
+    = link_to(raw("<i class=\"glyphicon glyphicon-plus\"></i> #{t('tides.index.button.new_fishing_logs')}"), new_fishing_log_path, method: :get, class: 'btn btn-primary btn-white')
 .row
   .col-md-5.tide-info
     %h3 大潮

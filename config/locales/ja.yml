@@ -123,17 +123,29 @@ ja:
       wrong_length: "%{count}文字で入力してください。"
       other_than: "%{count}以外の値にしてください。"
     template:
-      body: 次の項目を確認してください。
+      body: '次の項目を確認してください。'
       header:
         one: ! '%{model}にエラーが発生しました。'
         other: ! '%{model}に%{count}個のエラーが発生しました。'
   helpers:
+    titles:
+      home: 'ホーム'
+      new: '%{model} 作成'
+      edit: '%{model} 編集'
+      list: '%{model} 一覧'
+      show: '%{model} 詳細'
+    confirm:
+      delete: '削除しますか？'
     select:
-      prompt: 選択してください。
+      prompt: '選択してください。'
+    actions:
+      show: '表示'
+      edit: '編集'
+      destroy: '削除'
     submit:
-      create: 登録する
-      submit: 保存する
-      update: 更新する
+      create: '登録する'
+      submit: '保存する'
+      update: '更新する'
   number:
     currency:
       format:
@@ -173,6 +185,13 @@ ja:
           kb: キロバイト
           mb: メガバイト
           tb: テラバイト
+      fish_length:
+        billion: 十億
+        million: 百万
+        quadrillion: 千兆
+        thousand: 'm'
+        trillion: 兆
+        unit: 'cm'
     percentage:
       format:
         delimiter: ''
@@ -191,6 +210,7 @@ ja:
       default: ! '%Y/%m/%d %H:%M:%S'
       long: ! '%Y年%m月%d日(%a) %H時%M分%S秒 %z'
       short: ! '%y/%m/%d %H:%M'
+      time_only: ! '%H時%M分'
     pm: 午後
   activemodel:
     errors:
@@ -201,12 +221,26 @@ ja:
     attributes:
       fishing_log:
         fish_name: '魚種'
-        fish_length: 'aaa'
+        fish_length: 'サイズ'
+        fish_weight: '重さ'
+        fishing_point_name: '釣果場所'
+        fishing_method: '仕掛け'
+        fishing_date: '釣果日'
+        fishing_time: '釣果時刻'
+        bait: 'エサ'
+        comment: 'コメント'
+        submit: '登録'
     errors:
       <<: *errors
   site_title: 'サイトのタイトル'
   tides:
-    title: '釣果'
     index:
       button:
         new_fishing_logs: '釣果を入力する'
+  fishing_logs:
+    list:
+      new_fishing_log: '釣果を入力する'
+    create:
+      notice: '登録に成功しました。'
+    update:
+      notice: '更新に成功しました。'

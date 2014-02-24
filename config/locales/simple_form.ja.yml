@@ -10,10 +10,6 @@ ja:
       # html: '<abbr title="required">*</abbr>'
     error_notification:
       default_message: "以下の問題を確認してください。"
-    helpers:
-      titles:
-        new: '%{model} 作成'
-        edit: '%{model} 編集'
     hints:
       fishing_log:
         fish_name: '例）メバル、鯛など'

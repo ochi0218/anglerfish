@@ -1,7 +1,5 @@
-- @page_title = t('simple_form.helpers.titles.edit', model: t('tides.title'))
+- @page_title = t('helpers.titles.edit', model: t('activerecord.models.fishing_log'))
+- @page_category = 'fishing_logs'
 
 = render 'form'
 
-= link_to 'Show', @fishing_log
-\|
-= link_to 'Back', fishing_logs_path

@@ -28,7 +28,7 @@ class FishingLogsController < ApplicationController
 
     respond_to do |format|
       if @fishing_log.save
-        format.html { redirect_to @fishing_log, notice: 'Fishing log was successfully created.' }
+        format.html { redirect_to @fishing_log, notice: I18n.t('fishing_logs.create.notice') }
         format.json { render action: 'show', status: :created, location: @fishing_log }
       else
         format.html { render action: 'new' }
@@ -42,7 +42,7 @@ class FishingLogsController < ApplicationController
   def update
     respond_to do |format|
       if @fishing_log.update(fishing_log_params)
-        format.html { redirect_to @fishing_log, notice: 'Fishing log was successfully updated.' }
+        format.html { redirect_to @fishing_log, notice: I18n.t('fishing_logs.update.notice') }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }

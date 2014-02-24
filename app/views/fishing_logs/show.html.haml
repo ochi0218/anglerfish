@@ -1,33 +1,57 @@
-%p#notice= notice
+- @page_title = t('helpers.titles.show', model: t('activerecord.models.fishing_log'))
+- @page_category = 'fishing_logs'
 
-%p
-  %b Fish name:
-  = @fishing_log.fish_name
-%p
-  %b Fish length:
-  = @fishing_log.fish_length
-%p
-  %b Fish weight:
-  = @fishing_log.fish_weight
-%p
-  %b Fishing point name:
-  = @fishing_log.fishing_point_name
-%p
-  %b Fishing method:
-  = @fishing_log.fishing_method
-%p
-  %b Fishing date:
-  = @fishing_log.fishing_date
-%p
-  %b Fishing time:
-  = @fishing_log.fishing_time
-%p
-  %b Bait:
-  = @fishing_log.bait
-%p
-  %b Comment:
-  = @fishing_log.comment
+- if notice
+  .alert.alert-info
+    %p#notice= notice
 
-= link_to 'Edit', edit_fishing_log_path(@fishing_log)
-\|
-= link_to 'Back', fishing_logs_path
+%div.show
+  %div.row
+    %div.col-sm-2
+      %b #{t('activerecord.attributes.fishing_log.fish_name')}
+    %div.col-sm-10
+      = @fishing_log.fish_name
+  %div.row
+    %div.col-sm-2
+      %b #{t('activerecord.attributes.fishing_log.fish_length')}
+    %div.col-sm-10
+      = @fishing_log.fish_length
+  %div.row
+    %div.col-sm-2
+      %b #{t('activerecord.attributes.fishing_log.fish_weight')}
+    %div.col-sm-10
+      = @fishing_log.fish_weight
+  %div.row
+    %div.col-sm-2
+      %b #{t('activerecord.attributes.fishing_log.fishing_point_name')}
+    %div.col-sm-10
+      = @fishing_log.fishing_point_name
+  %div.row
+    %div.col-sm-2
+      %b #{t('activerecord.attributes.fishing_log.fishing_method')}
+    %div.col-sm-10
+      = @fishing_log.fishing_method
+  %div.row
+    %div.col-sm-2
+      %b #{t('activerecord.attributes.fishing_log.fishing_date')}
+    %div.col-sm-10
+      = l @fishing_log.fishing_date, format: :long
+  %div.row
+    %div.col-sm-2
+      %b #{t('activerecord.attributes.fishing_log.fishing_time')}
+    %div.col-sm-10
+      = l @fishing_log.fishing_time, format: :time_only
+  %div.row
+    %div.col-sm-2
+      %b #{t('activerecord.attributes.fishing_log.bait')}
+    %div.col-sm-10
+      = @fishing_log.bait
+  %div.row
+    %div.col-sm-2
+      %b #{t('activerecord.attributes.fishing_log.comment')}
+    %div.col-sm-10
+      %p
+        = linebreak_to_br @fishing_log.comment
+
+= link_to raw("<i class=\"\"></i> #{t('helpers.actions.edit')}"), edit_fishing_log_path(@fishing_log), class: 'btn btn-primary btn-white'
+

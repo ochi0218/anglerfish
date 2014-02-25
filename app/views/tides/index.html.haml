@@ -4,20 +4,33 @@
   .col-md-8
     .btn-group
       = button_tag(raw('<i class="glyphicon glyphicon-calendar"></i> 2012/02/01'), class: 'btn btn-info')
-      = button_tag(raw('<i class="glyphiconcon glyphicon-globe "></i> 松山'), class: 'btn btn-info')
+      = button_tag(raw("<i class=\"glyphiconcon glyphicon-globe\"></i> #{@tide.port_name}"), class: 'btn btn-info')
   .col-md-4
     = link_to(raw("<i class=\"glyphicon glyphicon-plus\"></i> #{t('tides.index.button.new_fishing_logs')}"), new_fishing_log_path, method: :get, class: 'btn btn-primary btn-white')
 .row
   .col-md-5.tide-info
-    %h3 大潮
+    = image_tag '/assets/tide-icons/svg/tide.svg', class: 'tide-img'
+    %p.tide-name= @tide.tide_name
   .col-md-7.tide-relation-info
-    .moon_age
-      = image_tag('/assets/weather-icons/svg/Moon-Full.svg')
-      %span 'TODO 月齢を表示'
-    .sunrise
-      = image_tag('/assets/weather-icons/svg/Sunrise.svg')
-      %span 'TODO 日の出時間を表示'
-    .sunset
-      = image_tag('/assets/weather-icons/svg/Sunset.svg')
-      %span 'TODO 日の入時間を表示'
+    .moon-age
+      %span
+        = image_tag moon_age_image(@tide.moon_age)
+      %span= @tide.moon_age
+    .sun-rise
+      %span
+        = image_tag '/assets/weather-icons/svg/Sunrise.svg'
+      %span= @tide.sun_rise
+    .sun-set
+      %span
+        = image_tag '/assets/weather-icons/svg/Sunset.svg'
+      %span= @tide.sun_set
 
+%table.table
+  %tr
+    -@tide.tides.size.times do
+      %th 時刻
+      %th 潮位
+  %tr
+    -@tide.tides.each do |tide|
+      %td= tide[0]
+      %td= tide[1]

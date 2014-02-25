@@ -1,0 +1,7 @@
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" 
+    "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+    <svg width="200" height="200"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink">
+    <path d="M 25,100 A 75,75 0 1,1 175,100 A 75,75 0 1,1 25,100 z" stroke="lightblue" fill="lightblue"/>
+  </svg>

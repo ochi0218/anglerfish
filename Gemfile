@@ -39,6 +39,9 @@ gem 'kaminari'
 # Haml
 gem 'haml-rails'
 
+# Rest API Client
+gem 'activeresource', require: 'active_resource'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false

@@ -1,0 +1,9 @@
+%ol.breadcrumb
+  %li.active
+    地域
+%ul.list-group.region
+  - @regions.each do |region|
+    %li.list-group-item
+      = link_to pref_index_path(region_id: region.id), remote: true, data: { type: :html } do
+        = region.name
+

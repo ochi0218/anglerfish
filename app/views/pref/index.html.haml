@@ -1,0 +1,12 @@
+%ol.breadcrumb
+  %li
+    = link_to region_index_path, remote: true, data: { type: :html } do
+      地域
+  %li.active
+    = @region.name
+%ul.list-group.pref
+  - @region.prefs.each do |pref|
+    %li.list-group-item
+      = link_to port_index_path(pref_id: pref.id), remote: true, data: { type: :html } do
+        = pref.name
+

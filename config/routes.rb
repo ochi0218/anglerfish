@@ -1,4 +1,7 @@
 Anglerfish::Application.routes.draw do
+  get "port/index"
+  get "pref/index"
+  get "region/index"
   get "tides/index"
   resources :fishing_logs
 

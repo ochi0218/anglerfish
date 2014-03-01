@@ -237,6 +237,9 @@ ja:
     index:
       button:
         new_fishing_logs: '釣果を入力する'
+      dialog:
+        port_select:
+          title: '港選択'
   fishing_logs:
     list:
       new_fishing_log: '釣果を入力する'

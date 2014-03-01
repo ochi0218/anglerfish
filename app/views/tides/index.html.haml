@@ -3,10 +3,17 @@
 .row
   .col-md-8
     .btn-group
-      = button_tag(raw('<i class="glyphicon glyphicon-calendar"></i> 2012/02/01'), class: 'btn btn-info')
-      = button_tag(raw("<i class=\"glyphiconcon glyphicon-globe\"></i> #{@tide.port_name}"), class: 'btn btn-info')
+      = button_tag class: 'btn btn-info', id: 'tide-date-select-button' do
+        %i.glyphicon.glyphicon-calendar
+        %span 2012/02/01
+      %input#tide-date-select-target.hide
+        = link_to region_index_path, remote: true, class: 'btn btn-info', id: 'port-select-button', data: { type: :html } do
+          %i.glyphiconcon.glyphicon-globe
+          %span= @tide.port_name
   .col-md-4
-    = link_to(raw("<i class=\"glyphicon glyphicon-plus\"></i> #{t('tides.index.button.new_fishing_logs')}"), new_fishing_log_path, method: :get, class: 'btn btn-primary btn-white')
+    = link_to new_fishing_log_path, method: :get, class: 'btn btn-primary btn-white' do
+      %i.glyphiconcon.glyphicon-plus
+      = t('.button.new_fishing_logs')
 .row
   .col-md-5.tide-info
     = image_tag '/assets/tide-icons/svg/tide.svg', class: 'tide-img'
@@ -34,3 +41,6 @@
     -@tide.tides.each do |tide|
       %td= tide[0]
       %td= tide[1]
+
+%div#port-select-dialog{ title: t('.dialog.port_select.title') }
+

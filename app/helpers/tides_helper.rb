@@ -1,7 +1,7 @@
 module TidesHelper
     def moon_age_image(moon_age_str)
         moon_age = moon_age_str.to_f
-        if moon_age >= 29 && moon_age < 2
+        if moon_age >= 29 || moon_age < 2
             image = 'Moon-New.svg'
         elsif moon_age >= 2 && moon_age < 6
             image = 'Moon-Waxing-Crescent.svg'

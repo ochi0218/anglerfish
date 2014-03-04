@@ -5,7 +5,7 @@
     .btn-group
       = button_tag class: 'btn btn-info', id: 'tide-date-select-button' do
         %i.glyphicon.glyphicon-calendar
-        %span 2012/02/01
+        %span= l @tide.date, format: :long
       %input#tide-date-select-target.hide
         = link_to region_index_path, remote: true, class: 'btn btn-info', id: 'port-select-button', data: { type: :html } do
           %i.glyphiconcon.glyphicon-globe
@@ -26,11 +26,11 @@
     .sun-rise
       %span
         = image_tag '/assets/weather-icons/svg/Sunrise.svg'
-      %span= @tide.sun_rise
+      %span= l @tide.sun_rise, format: :time_only
     .sun-set
       %span
         = image_tag '/assets/weather-icons/svg/Sunset.svg'
-      %span= @tide.sun_set
+      %span= l @tide.sun_set, format: :time_only
 
 %table.table
   %tr
@@ -39,8 +39,12 @@
       %th 潮位
   %tr
     -@tide.tides.each do |tide|
-      %td= tide[0]
-      %td= tide[1]
+      %td= l tide[:time], format: :time_only
+      %td= tide[:tide_level]
 
 %div#port-select-dialog{ title: t('.dialog.port_select.title') }
+
+= form_tag tides_index_path, method: :get, class: 'hide', id: 'tide-search-form' do
+  = date_field_tag :date, @tide.date, class: :date
+  = text_field_tag :port_name, remove_bom(@tide.port_name), class: :port_name
 

@@ -13,9 +13,12 @@ $ ->
     $('#port-select-dialog').dialog('open')
 
   $('#tide-date-select-target').datepicker({
-    dateFormat: 'yy/mm/dd',
+    dateFormat: 'yy年mm月dd日(D)',
     onSelect: ->
       $('#tide-date-select-button > span').text(this.value)
+      date = $.datepicker.formatDate('yy-mm-dd', $('#tide-date-select-target').datepicker("getDate"))
+      $('#tide-search-form > input.date').val(date)
+      $('#tide-search-form').submit()
   })
   $('#tide-date-select-button').click ->
     $('#tide-date-select-target').datepicker('show')
@@ -31,5 +34,7 @@ $ ->
     port_name = $(this).data('name')
     $('#port-select-button > span').text(port_name)
     $('#port-select-dialog').dialog('close')
+    $('#tide-search-form > input.port_name').val(port_name)
+    $('#tide-search-form').submit()
     false
 

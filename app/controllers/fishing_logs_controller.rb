@@ -4,7 +4,7 @@ class FishingLogsController < ApplicationController
   # GET /fishing_logs
   # GET /fishing_logs.json
   def index
-    @fishing_logs = FishingLog.all
+    @fishing_logs = FishingLog.page(params[:page])
   end
 
   # GET /fishing_logs/1

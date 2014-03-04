@@ -1,6 +1,10 @@
 - @page_title = t('helpers.titles.list', model: t('activerecord.models.fishing_log'))
 - @page_category = 'fishing_logs'
 
+%p
+  %span.pull-left= t('views.page_info.page', current: @fishing_logs.current_page, total: @fishing_logs.num_pages)
+  %span.pull-right= t('views.page_info.records', offset: @fishing_logs.offset_value+1, limit: (@fishing_logs.offset_value+@fishing_logs.length), total: @fishing_logs.total_count)
+  %span.clearfix
 %table.table.table-striped.table-hover
   %tr
     %th #{t('activerecord.attributes.fishing_log.fish_name')}
@@ -28,6 +32,8 @@
       %td= link_to t('helpers.actions.show'), fishing_log, class: 'btn btn-default btn-xs'
       %td= link_to raw("<i class=\"glyphicon glyphicon-edit\"></i> #{t('helpers.actions.edit')}"), edit_fishing_log_path(fishing_log), class: 'btn btn-default btn-xs'
       %td= link_to raw("<i class=\"glyphicon glyphicon-trash\"></i> #{t('helpers.actions.destroy')}"), fishing_log, :method => :delete, :data => { :confirm => t('helpers.confirm.delete') }, class: 'btn btn-danger btn-xs btn-white'
+
+= paginate @fishing_logs
 
 %br
 

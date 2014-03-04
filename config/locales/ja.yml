@@ -232,6 +232,16 @@ ja:
         submit: '登録'
     errors:
       <<: *errors
+  views:
+    pagination:
+      first: "&laquo; 最初へ"
+      last: "最後へ &raquo;"
+      previous: "&lsaquo; 前へ"
+      next: "次へ &rsaquo;"
+      truncate: "..."
+    page_info:
+      page: "ページ %{current} / %{total}"
+      records: "%{total}件中 %{offset}〜%{limit}件を表示しています"
   site_title: 'サイトのタイトル'
   tides:
     index:

@@ -5,7 +5,7 @@ class FishingLogsController < ApplicationController
   # GET /fishing_logs
   # GET /fishing_logs.json
   def index
-    @fishing_logs = FishingLog.page(params[:page])
+    @fishing_logs = FishingLog.where(user_id: current_user.id).page(params[:page])
   end
 
   # GET /fishing_logs/1
@@ -26,6 +26,7 @@ class FishingLogsController < ApplicationController
   # POST /fishing_logs.json
   def create
     @fishing_log = FishingLog.new(fishing_log_params)
+    @fishing_log.user_id = current_user.id
 
     respond_to do |format|
       if @fishing_log.save
@@ -42,6 +43,7 @@ class FishingLogsController < ApplicationController
   # PATCH/PUT /fishing_logs/1.json
   def update
     respond_to do |format|
+      @fishing_log.user_id = current_user.id
       if @fishing_log.update(fishing_log_params)
         format.html { redirect_to @fishing_log, notice: I18n.t('fishing_logs.update.notice') }
         format.json { head :no_content }
@@ -65,7 +67,7 @@ class FishingLogsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_fishing_log
-      @fishing_log = FishingLog.find(params[:id])
+      @fishing_log = FishingLog.where(user_id: current_user.id).find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

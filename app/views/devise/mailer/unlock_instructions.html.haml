@@ -1,0 +1,3 @@
+%p= t('.hello', name: @resource.email)
+%p= t('.description')
+%p= link_to t('.unlock_link'), unlock_url(@resource, :unlock_token => @token)

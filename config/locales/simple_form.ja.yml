@@ -36,4 +36,11 @@ ja:
         fishing_time: '釣果時刻'
         bait: 'エサ'
         comment: 'コメント'
-        submit: '登録'
+      user:
+        email: 'メールアドレス'
+        password: 'パスワード'
+        password_confirmation: 'パスワード確認'
+        remember_me: 'ログインしたままにする'
+        submit: 'ログイン'
+        current_password: '現在パスワード'
+

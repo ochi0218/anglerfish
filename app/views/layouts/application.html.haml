@@ -10,7 +10,23 @@
     %header#header.navbar.navbar-inverse.navbar-fixed-top
       .container-fluid
         .navbar-header
-          %a.navbar-brand{href: "#"} #{t('site_title')}
+          = link_to t('site_title'), root_path, class: 'navbar-brand'
+        .navbar-collapse.collapse
+          %ul.nav.navbar-nav.navbar-right
+            %li
+              = link_to t('top_nav.titles.help'), '#'
+            %li
+              = link_to t('top_nav.titles.contact'), '#'
+            - if user_signed_in?
+              %li
+                = link_to t('top_nav.titles.change_password'), edit_user_registration_path
+              %li
+                = link_to t('top_nav.titles.logout'), destroy_user_session_path, method: :delete
+            - else
+              %li
+                = link_to t('top_nav.titles.regist'), new_user_registration_path
+              %li
+                = link_to t('top_nav.titles.login'), new_user_session_path
     .cotainer-fluid
       .row
         #sideber.col-sm-3.col-md-2.sidebar
@@ -18,6 +34,12 @@
             %li{ class: @page_category == 'home' ? 'active' : ''} #{link_to(t('helpers.titles.home'), root_path)}
             %li{ class: @page_category == 'fishing_logs' ? 'active' : '' } #{link_to(t('activerecord.models.fishing_log'), fishing_logs_path)}
         #main.col-sm-9.col-sm-offset-3.col-md-10.col-md-offset-2.main
+          - if notice or alert
+            .notify-block
+              - if notice
+                .alert.alert-info= notice
+              - if alert
+                .alert.alert-danger= alert
           - if @page_title
             .page_title
               %h1 #{@page_title}

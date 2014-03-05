@@ -243,6 +243,14 @@ ja:
       page: "ページ %{current} / %{total}"
       records: "%{total}件中 %{offset}〜%{limit}件を表示しています"
   site_title: 'サイトのタイトル'
+  top_nav:
+    titles:
+      help: ヘルプ
+      contact: お問い合わせ
+      login: ログイン
+      logout: ログアウト
+      regist: 新規登録
+      change_password: パスワード変更
   tides:
     index:
       button:
@@ -257,3 +265,45 @@ ja:
       notice: '登録に成功しました。'
     update:
       notice: '更新に成功しました。'
+  devise:
+    sessions:
+      new:
+        title: 'ログイン'
+        submit_button: 'ログイン'
+    passwords:
+      new:
+        title: 'パスワード変更'
+        submit_buton: '送信'
+      edit:
+        title: 'パスワード変更'
+        submit_button: '変更'
+    registrations:
+      new:
+        title: '新規登録'
+        submit_button: '新規登録'
+      edit:
+        password_hint: 'パスワードを変更しない場合は、空白にしてください。'
+        title: 'ログイン情報変更'
+        submit_button: '変更'
+        destroy_title: 'アカウント削除'
+        destroy_link: 'アカウントを削除します'
+        destroy_confirm: '本当によろしいですか？'
+    shared:
+      links:
+        sign_in: 'ログイン'
+        sign_up: '新規登録'
+        forget_password: '※パスワードを忘れた方はこちら'
+    mailer:
+      unlock_instructions:
+        hello: 'こんにちわ %{name}。'
+        description: 'アカウントがロックされました。以下のリンクからロックを解除してください。'
+        unlock_link: 'ロックを解除する'
+      confirmation_instructions:
+        hello: 'こんにちわ %{name}。'
+        description: '以下のリンクから登録を完了してください。'
+        regist_link: '登録を完了する'
+      reset_password_instructions:
+        hello: 'こんにちは %{name}。'
+        description: 'パスワードの変更依頼を受け付けました。以下のリンクから変更できます。'
+        password_link: 'パスワード変更'
+        alert: '※送信した覚えがない場合は、このメールは無視してください。'

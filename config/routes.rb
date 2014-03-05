@@ -1,4 +1,5 @@
 Anglerfish::Application.routes.draw do
+  devise_for :users
   get "port/index"
   get "pref/index"
   get "region/index"

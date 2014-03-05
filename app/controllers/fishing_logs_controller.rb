@@ -1,5 +1,6 @@
 class FishingLogsController < ApplicationController
   before_action :set_fishing_log, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /fishing_logs
   # GET /fishing_logs.json

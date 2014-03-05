@@ -44,7 +44,10 @@ gem 'haml-rails'
 gem 'activeresource', require: 'active_resource'
 
 # ActiveRecord like in yaml
-gem "static_model"
+gem 'static_model'
+
+# Authentication
+gem 'devise'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

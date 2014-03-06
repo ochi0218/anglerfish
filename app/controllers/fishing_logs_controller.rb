@@ -15,7 +15,11 @@ class FishingLogsController < ApplicationController
 
   # GET /fishing_logs/new
   def new
-    @fishing_log = FishingLog.new
+    if params[:fishing_log_init]
+      @fishing_log = FishingLog.new(fishing_log_init_params)
+    else
+      @fishing_log = FishingLog.new()
+    end
   end
 
   # GET /fishing_logs/1/edit
@@ -59,7 +63,7 @@ class FishingLogsController < ApplicationController
   def destroy
     @fishing_log.destroy
     respond_to do |format|
-      format.html { redirect_to fishing_logs_url }
+      format.html { redirect_to fishing_logs_url, notice: I18n.t('fishing_logs.destroy.notice') }
       format.json { head :no_content }
     end
   end
@@ -73,5 +77,9 @@ class FishingLogsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def fishing_log_params
       params.require(:fishing_log).permit(:fish_name, :fish_length, :fish_weight, :fishing_point_name, :fishing_method, :fishing_date, :fishing_time, :bait, :comment)
+    end
+
+    def fishing_log_init_params
+      params.require(:fishing_log_init).permit(:fishing_point_name, :fishing_date)
     end
 end

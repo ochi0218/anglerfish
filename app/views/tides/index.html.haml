@@ -11,7 +11,7 @@
           %i.glyphiconcon.glyphicon-globe
           %span= @tide.port_name
   .col-md-4
-    = link_to new_fishing_log_path, method: :get, class: 'btn btn-primary btn-white' do
+    = link_to new_fishing_log_path, method: :get, class: 'btn btn-primary btn-white', id: 'new-fishing-log-link' do
       %i.glyphiconcon.glyphicon-plus
       = t('.button.new_fishing_logs')
 .row
@@ -35,8 +35,8 @@
 %table.table
   %tr
     -@tide.tides.size.times do
-      %th 時刻
-      %th 潮位
+      %th= t('.tide_table.date')
+      %th= t('.tide_table.level')
   %tr
     -@tide.tides.each do |tide|
       %td= l tide[:time], format: :time_only
@@ -47,4 +47,6 @@
 = form_tag tides_index_path, method: :get, class: 'hide', id: 'tide-search-form' do
   = date_field_tag :date, @tide.date, class: :date
   = text_field_tag :port_name, remove_bom(@tide.port_name), class: :port_name
-
+= form_tag new_fishing_log_path, method: :get, class: 'hide', id: 'new-fishing-log-form' do
+  = date_field :fishing_log_init, :fishing_date, class: :date
+  = text_field :fishing_log_init, :fishing_point_name, class: :port_name

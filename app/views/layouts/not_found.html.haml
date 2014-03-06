@@ -1,0 +1,34 @@
+!!!
+%html
+  %head
+    %title #{t('site_title')}
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
+    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+  %body
+    %header#header.navbar.navbar-inverse.navbar-fixed-top
+      .container-fluid
+        .navbar-header
+          = link_to t('site_title'), root_path, class: 'navbar-brand'
+        .navbar-collapse.collapse
+          %ul.nav.navbar-nav.navbar-right
+            %li
+              = link_to t('top_nav.titles.help'), '#'
+            %li
+              = link_to t('top_nav.titles.contact'), '#'
+            - if user_signed_in?
+              %li
+                = link_to t('top_nav.titles.change_password'), edit_user_registration_path
+              %li
+                = link_to t('top_nav.titles.logout'), destroy_user_session_path, method: :delete
+            - else
+              %li
+                = link_to t('top_nav.titles.regist'), new_user_registration_path
+              %li
+                = link_to t('top_nav.titles.login'), new_user_session_path
+    .cotainer-fluid
+      #main.main
+        .contents
+          = yield
+    %fotter#fotter.fotter
+
+

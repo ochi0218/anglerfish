@@ -12,6 +12,9 @@ Anglerfish::Application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'tides#index'
 
+  # 404 page controll
+  get '*path', controller: 'application', action: 'render_404'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

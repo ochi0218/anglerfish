@@ -11,12 +11,12 @@
     %div.col-sm-2
       %b #{t('activerecord.attributes.fishing_log.fish_length')}
     %div.col-sm-10
-      = @fishing_log.fish_length
+      = number_to_human @fishing_log.fish_length, units: { unit: 'cm', thousand: 'm' }
   %div.row
     %div.col-sm-2
       %b #{t('activerecord.attributes.fishing_log.fish_weight')}
     %div.col-sm-10
-      = @fishing_log.fish_weight
+      = number_to_human @fishing_log.fish_weight, units: { unit: 'cm', thousand: 'm' }
   %div.row
     %div.col-sm-2
       %b #{t('activerecord.attributes.fishing_log.fishing_point_name')}

@@ -38,9 +38,12 @@ setup_port_select = ->
 # 潮汐日選択ピッカーを設定する。
 setup_tide_date_select = ->
   $tide_date_select = $('#tide-date-select-target')
+  $tide_date_select_alt = $('#tide-date-select-target-alt')
   $tide_date_select_button = $('#tide-date-select-button')
 
   $tide_date_select.datepicker({
+    altField: '#tide-date-select-target-alt',
+    altFormat: 'yy-mm-dd',
     dateFormat: 'yy年mm月dd日(D)',
     onSelect: ->
       $tide_date_select_button.find('span').text(this.value)
@@ -50,6 +53,7 @@ setup_tide_date_select = ->
       $tide_search_form.submit()
   })
   $tide_date_select_button.click ->
+    $tide_date_select.datepicker('setDate', $.datepicker.parseDate('yy-mm-dd', $tide_date_select_alt.val()))
     $tide_date_select.datepicker('show')
 
 # 釣果入力ボタンを設定する。

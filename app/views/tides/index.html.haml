@@ -7,9 +7,10 @@
         %i.glyphicon.glyphicon-calendar
         %span= l @tide.date, format: :long
       %input#tide-date-select-target.hide
-        = link_to region_index_path, remote: true, class: 'btn btn-info', id: 'port-select-button', data: { type: :html } do
-          %i.glyphiconcon.glyphicon-globe
-          %span= @tide.port_name
+      %input#tide-date-select-target-alt.hide{ value: params[:date] }
+      = link_to region_index_path, remote: true, class: 'btn btn-info', id: 'port-select-button', data: { type: :html } do
+        %i.glyphiconcon.glyphicon-globe
+        %span= @tide.port_name
   .col-md-4
     = link_to new_fishing_log_path, method: :get, class: 'btn btn-primary btn-white', id: 'new-fishing-log-link' do
       %i.glyphiconcon.glyphicon-plus

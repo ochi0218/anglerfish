@@ -251,6 +251,12 @@ ja:
       logout: ログアウト
       regist: 新規登録
       change_password: パスワード変更
+  errors:
+    application_error:
+      title: アプリケーションエラー
+      goto_top: トップに戻る
+      messages:
+        rest_api_connection: 通信エラーが発生しました。
   tides:
     index:
       tide_table:

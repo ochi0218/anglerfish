@@ -2,8 +2,11 @@
 # 潮汐データを管理するオブジェクト
 #
 class Tide < ActiveResource::Base
+    # 日付パラメータ（今日データを取得するための値）
     TIDE_GET_DATE_PARAM_VALUE_OF_TODAY = 'today'.freeze
+    # 日付パラメータの日付フォーマット
     TIDE_GET_DATE_PARAM_FORMAT = '%Y/%m/%d'.freeze
+    # 潮汐データの潮位レベルの単位
     TIDE_GET_RESULT_TIDE_LEVEL_UNIT = 'cm'.freeze
 
     attr_accessor :tides, :date, :sun_rise, :sun_set, :moon_rise, :moon_set
@@ -12,6 +15,7 @@ class Tide < ActiveResource::Base
     
     self.site = 'http://www.e-tsuri.info/'
     self.format = :xml
+    self.timeout = 20
 
     # 
     # 指定の港名から本日の潮汐情報を取得する。
@@ -24,11 +28,12 @@ class Tide < ActiveResource::Base
     # 指定の港名から指定の日付の潮汐情報を取得する。
     #
     def self.get(date, port)
+        raise ArgumentError if date.nil? || port.nil?
+
         date_param = (date == TIDE_GET_DATE_PARAM_VALUE_OF_TODAY ? date : date.strftime(TIDE_GET_DATE_PARAM_FORMAT))
         port_param = port
         model = Tide.find(:one, from: '/tide', params: { p: port_param, d: date_param }) 
-        bind_addtional_attr model unless model.nil?
-        model
+        model.tap {|m| bind_addtional_attr m } unless model.nil?
     end
 
     #

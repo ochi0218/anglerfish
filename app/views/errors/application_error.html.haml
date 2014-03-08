@@ -1,0 +1,7 @@
+%h1= t('.title')
+%br
+.alert.alert-danger
+  %p= flash[:error_message]
+
+.text-center
+  = link_to t('.goto_top'), root_path 

@@ -4,9 +4,6 @@
     %title #{t('site_title')}
     %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
     = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
-    = javascript_include_tag "application", "data-turbolinks-track" => true
-    = javascript_include_tag params[:controller], "data-turbolinks-track" => true
-    = csrf_meta_tags
   %body
     %header#header.navbar.navbar-inverse.navbar-fixed-top
       .container-fluid
@@ -14,10 +11,10 @@
           = link_to t('site_title'), root_path, class: 'navbar-brand'
         .navbar-collapse.collapse
           %ul.nav.navbar-nav.navbar-right
-            -#%li
+            %li
               = link_to t('top_nav.titles.help'), '#'
             %li
-              = link_to t('top_nav.titles.contact'), 'mailto:dev.angler.fish@gmail.com'
+              = link_to t('top_nav.titles.contact'), '#'
             - if user_signed_in?
               %li
                 = link_to t('top_nav.titles.change_password'), edit_user_registration_path
@@ -29,23 +26,9 @@
               %li
                 = link_to t('top_nav.titles.login'), new_user_session_path
     .cotainer-fluid
-      .row
-        #sideber.col-sm-3.col-md-2.sidebar
-          %ul.nav.nav-sidebar
-            %li{ class: @page_category == 'home' ? 'active' : ''} #{link_to(t('helpers.titles.home'), root_path)}
-            %li{ class: @page_category == 'fishing_logs' ? 'active' : '' } #{link_to(t('activerecord.models.fishing_log'), fishing_logs_path)}
-        #main.col-sm-9.col-sm-offset-3.col-md-10.col-md-offset-2.main
-          - if notice or alert
-            .notify-block
-              - if notice
-                .alert.alert-info= notice
-              - if alert
-                .alert.alert-danger= alert
-          - if @page_title
-            .page_title
-              %h1 #{@page_title}
-          .contents
-            = yield
+      #main.main
+        .contents
+          = yield
     %fotter#fotter.fotter
 
 

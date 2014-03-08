@@ -3,8 +3,6 @@ class TidesController < ApplicationController
     date = params[:date].present? ? Date.parse(params[:date]) : Date.today
     port_name = params[:port_name].presence || first_port_name
 
-    p port_name
-
     cookies[:last_search_port_name] = port_name
 
     @tide = Tide.get date, port_name

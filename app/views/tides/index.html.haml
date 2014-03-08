@@ -32,15 +32,27 @@
         = image_tag '/assets/weather-icons/svg/Sunset.svg'
       %span= l @tide.sun_set, format: :time_only
 
+%h3= t('.tide_table.high_tide_caption')
 %table.table
   %tr
-    -@tide.tides.size.times do
+    -@tide.high_tides.size.times do
       %th= t('.tide_table.date')
       %th= t('.tide_table.level')
   %tr
-    -@tide.tides.each do |tide|
-      %td= l tide[:time], format: :time_only
-      %td= tide[:tide_level]
+    -@tide.high_tides.each do |tide|
+      %td= l tide[:time], format: :time_only unless tide.nil?
+      %td= number_to_human tide[:tide_level], units: { unit: 'cm' }  unless tide.nil?
+
+%h3= t('.tide_table.low_tide_caption')
+%table.table
+  %tr
+    -@tide.low_tides.size.times do
+      %th= t('.tide_table.date')
+      %th= t('.tide_table.level')
+  %tr
+    -@tide.low_tides.each do |tide|
+      %td= l tide[:time], format: :time_only unless tide.nil?
+      %td= number_to_human tide[:tide_level], units: { unit: 'cm' }  unless tide.nil?
 
 %div#port-select-dialog{ title: t('.dialog.port_select.title') }
 

@@ -210,7 +210,7 @@ ja:
       default: ! '%Y/%m/%d %H:%M:%S'
       long: ! '%Y年%m月%d日(%a) %H時%M分%S秒 %z'
       short: ! '%y/%m/%d %H:%M'
-      time_only: ! '%H時%M分'
+      time_only: ! '%-H時%-M分'
     pm: 午後
   activemodel:
     errors:
@@ -254,6 +254,8 @@ ja:
   tides:
     index:
       tide_table:
+        high_tide_caption: 満潮
+        low_tide_caption: 干潮
         date: 時刻
         level: 潮位
       button:

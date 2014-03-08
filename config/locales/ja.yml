@@ -242,7 +242,7 @@ ja:
     page_info:
       page: "ページ %{current} / %{total}"
       records: "%{total}件中 %{offset}〜%{limit}件を表示しています"
-  site_title: 'サイトのタイトル'
+  site_title: AnglerFish.ベータ版
   top_nav:
     titles:
       help: ヘルプ

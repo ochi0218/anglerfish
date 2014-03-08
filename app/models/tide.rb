@@ -27,7 +27,7 @@ class Tide < ActiveResource::Base
         date_param = (date == TIDE_GET_DATE_PARAM_VALUE_OF_TODAY ? date : date.strftime(TIDE_GET_DATE_PARAM_FORMAT))
         port_param = port
         model = Tide.find(:one, from: '/tide', params: { p: port_param, d: date_param }) 
-        bind_addtional_attr model
+        bind_addtional_attr model unless model.nil?
         model
     end
 

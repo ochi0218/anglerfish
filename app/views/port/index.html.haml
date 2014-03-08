@@ -10,6 +10,6 @@
 %ul.list-group.port
   - @pref.ports.each do |port|
     %li.list-group-item
-      = link_to 'javascript:void(0);', data: { name: port.name } do
+      = link_to 'javascript:void(0);', data: { name: port.name, id: port.id } do
         = port.name
 

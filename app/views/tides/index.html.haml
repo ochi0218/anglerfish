@@ -56,7 +56,7 @@
 
 %div#port-select-dialog{ title: t('.dialog.port_select.title') }
 
-= form_tag tides_index_path, method: :get, class: 'hide', id: 'tide-search-form' do
+= form_tag root_path, method: :get, class: 'hide', id: 'tide-search-form' do
   = date_field_tag :date, @tide.date, class: :date
   = text_field_tag :port_name, remove_bom(@tide.port_name), class: :port_name
 = form_tag new_fishing_log_path, method: :get, class: 'hide', id: 'new-fishing-log-form' do

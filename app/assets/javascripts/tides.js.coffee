@@ -11,7 +11,10 @@ setup_port_select = ->
     autoOpen: false,
     modal: true,
     height: 400,
-    width: 400
+    width: 400,
+    open: (event, ui) ->
+      $(this).parent().find('.ui-dialog-titlebar-close').text('x')
+
   })
   $port_select_button.click -> 
     $port_select_dialog.dialog('open')

@@ -1,3 +1,6 @@
+#
+# 港。
+#
 class Port < StaticModel::Base
   set_data_file "#{Rails.root}/data/port.yml"
 

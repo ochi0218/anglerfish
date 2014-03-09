@@ -1,3 +1,6 @@
+#
+# 港ページコントローラ。
+#
 class PortController < ApplicationController
   def index
       @pref = Pref.find(params[:pref_id].to_i)

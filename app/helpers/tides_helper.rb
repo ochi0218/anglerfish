@@ -1,4 +1,8 @@
 module TidesHelper
+
+    #
+    # 月齢画像を表示する。
+    #
     def moon_age_image(moon_age_str)
         moon_age = moon_age_str.to_f
         if moon_age >= 29 || moon_age < 2

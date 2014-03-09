@@ -1,3 +1,6 @@
+#
+# 釣果ページコントローラ。
+#
 class FishingLogsController < ApplicationController
   before_action :set_fishing_log, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
@@ -69,16 +72,24 @@ class FishingLogsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+  
+    #
+    # 釣果モデルを設定する。
+    #
     def set_fishing_log
         @fishing_log = FishingLog.where(user_id: current_user.id).find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
+    #
+    # 釣果登録のパラメータ
+    #
     def fishing_log_params
       params.require(:fishing_log).permit(:fish_name, :fish_length, :fish_weight, :fishing_point_name, :fishing_method, :fishing_date, :fishing_time, :bait, :comment)
     end
 
+    #
+    # 釣果登録の初期パラメータ
+    #
     def fishing_log_init_params
       params.require(:fishing_log_init).permit(:fishing_point_name, :fishing_date)
     end

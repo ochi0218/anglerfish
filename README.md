@@ -4,6 +4,7 @@ anglerfish
 潮汐データyaml作成スクリプト
 =========
 
+```
 var d=document;var s=document.createElement("script");s.type="text/javascript";s.src="http://code.jquery.com/jquery-1.11.0.min.js";d.getElementsByTagName('head')[0].appendChild(s);
 var region='', pref='', port='', regionid=1, prefid=1, portid=1;
 $('ul.area > li > a').each(function(){
@@ -31,4 +32,4 @@ $('ul.area > li > a').each(function(){
 var r = $('<div style="position:absolute;top:0;left:0;z-index:999999;width:100%;background-color:white;"/>');
 $('body').append(r);
 r.html('<pre>'+region + pref + port+'</pre>');
-
+```

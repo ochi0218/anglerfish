@@ -1,6 +1,5 @@
 inputs = %w[
   CollectionSelectInput
-  FileInput
   GroupedCollectionSelectInput
   NumericInput
   PasswordInput

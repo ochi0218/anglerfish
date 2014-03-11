@@ -16,6 +16,7 @@ module Anglerfish
     # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.
     config.time_zone = 'Tokyo'
     config.active_record.default_timezone = :local
+    config.autoload_paths += %W( #{config.root}/lib/extensions )
 
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     I18n.enforce_available_locales = true

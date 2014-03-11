@@ -84,7 +84,7 @@ class FishingLogsController < ApplicationController
     # 釣果登録のパラメータ
     #
     def fishing_log_params
-      params.require(:fishing_log).permit(:fish_name, :fish_length, :fish_weight, :fishing_point_name, :fishing_method, :fishing_date, :fishing_time, :bait, :comment)
+      params.require(:fishing_log).permit(:fish_name, :fish_length, :fish_weight, :fishing_point_name, :fishing_method, :fishing_date, :fishing_time, :bait, :fish_image, :comment)
     end
 
     #

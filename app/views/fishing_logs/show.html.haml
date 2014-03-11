@@ -1,7 +1,7 @@
 - @page_title = t('helpers.titles.show', model: t('activerecord.models.fishing_log'))
 - @page_category = 'fishing_logs'
 
-%div.show
+%div.show.fishing_log_show
   %div.row
     %div.col-sm-2
       %b #{t('activerecord.attributes.fishing_log.fish_name')}
@@ -42,6 +42,12 @@
       %b #{t('activerecord.attributes.fishing_log.bait')}
     %div.col-sm-10
       = @fishing_log.bait
+  %div.row
+    %div.col-sm-2
+      %b #{t('activerecord.attributes.fishing_log.fish_image')}
+    %div.col-sm-10
+      - if @fishing_log.fish_image?
+        %div.fish_image{ style: "background-image: url('#{@fishing_log.fish_image_url }')" }
   %div.row
     %div.col-sm-2
       %b #{t('activerecord.attributes.fishing_log.comment')}

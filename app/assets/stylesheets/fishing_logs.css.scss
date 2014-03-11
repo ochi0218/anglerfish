@@ -1,3 +1,12 @@
 // Place all the styles related to the fishing_logs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.fishing_log_show {
+    .fish_image {
+        width: 100%;
+        height: 150px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: left center;
+    }
+}

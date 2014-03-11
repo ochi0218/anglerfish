@@ -35,6 +35,7 @@ ja:
         fishing_date: '釣果日'
         fishing_time: '釣果時刻'
         bait: 'エサ'
+        fish_image: '画像'
         comment: 'コメント'
       user:
         email: 'メールアドレス'

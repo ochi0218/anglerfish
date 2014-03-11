@@ -1,4 +1,4 @@
-= simple_form_for @fishing_log, html: { class: 'form-horizontal' } do |f|
+= simple_form_for @fishing_log, html: { class: 'form-horizontal', multipart: true } do |f|
   - if notification = f.error_notification
     = notification
 
@@ -10,6 +10,7 @@
   = f.input :fishing_date, as: :datepicker
   = f.input :fishing_time, as: :time
   = f.input :bait
+  = f.input :fish_image, as: :file
   = f.input :comment, as: :text
 
   .form-actions

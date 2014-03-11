@@ -18,3 +18,7 @@
 # vim swap file
 *.swp
 
+# public
+/public/assets
+/public/uploads
+

@@ -61,5 +61,5 @@
   = date_field_tag :date, @tide.date, class: :date
   = text_field_tag :port_name, remove_bom(@tide.port_name), class: :port_name
 = form_tag new_fishing_log_path, method: :get, class: 'hide', id: 'new-fishing-log-form' do
-  = date_field :fishing_log_init, :fishing_date, class: :date
-  = text_field :fishing_log_init, :fishing_point_name, class: :port_name
+  = date_field :fishing_log, :fishing_date, class: :date
+  = text_field :fishing_log, :fishing_point_name, class: :port_name

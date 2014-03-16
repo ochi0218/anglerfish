@@ -8,7 +8,7 @@ class FishingLogsController < ApplicationController
   # GET /fishing_logs
   # GET /fishing_logs.json
   def index
-    @fishing_logs = FishingLog.where(user_id: current_user.id).page(params[:page])
+    @fishing_logs = current_user.fishing_logs.page(params[:page])
   end
 
   # GET /fishing_logs/1
@@ -18,11 +18,7 @@ class FishingLogsController < ApplicationController
 
   # GET /fishing_logs/new
   def new
-    if params[:fishing_log_init]
-      @fishing_log = FishingLog.new(fishing_log_init_params)
-    else
-      @fishing_log = FishingLog.new()
-    end
+    @fishing_log = FishingLog.new(fishing_log_params)
   end
 
   # GET /fishing_logs/1/edit
@@ -32,8 +28,7 @@ class FishingLogsController < ApplicationController
   # POST /fishing_logs
   # POST /fishing_logs.json
   def create
-    @fishing_log = FishingLog.new(fishing_log_params)
-    @fishing_log.user_id = current_user.id
+    current_user.fishing_logs.build(fishing_log_params)
 
     respond_to do |format|
       if @fishing_log.save
@@ -50,7 +45,8 @@ class FishingLogsController < ApplicationController
   # PATCH/PUT /fishing_logs/1.json
   def update
     respond_to do |format|
-      @fishing_log.user_id = current_user.id
+      @fishing_log.user = current_user
+
       if @fishing_log.update(fishing_log_params)
         format.html { redirect_to @fishing_log, notice: I18n.t('fishing_logs.update.notice') }
         format.json { head :no_content }
@@ -77,7 +73,7 @@ class FishingLogsController < ApplicationController
     # 釣果モデルを設定する。
     #
     def set_fishing_log
-        @fishing_log = FishingLog.where(user_id: current_user.id).find(params[:id])
+      @fishing_log = FishingLog.where(user_id: current_user.id).find(params[:id])
     end
 
     #
@@ -85,12 +81,5 @@ class FishingLogsController < ApplicationController
     #
     def fishing_log_params
       params.require(:fishing_log).permit(:fish_name, :fish_length, :fish_weight, :fishing_point_name, :fishing_method, :fishing_date, :fishing_time, :bait, :fish_image, :comment)
-    end
-
-    #
-    # 釣果登録の初期パラメータ
-    #
-    def fishing_log_init_params
-      params.require(:fishing_log_init).permit(:fishing_point_name, :fishing_date)
     end
 end

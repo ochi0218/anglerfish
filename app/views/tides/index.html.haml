@@ -7,7 +7,7 @@
         %i.glyphicon.glyphicon-calendar
         %span= l @tide.date, format: :long
       %input#tide-date-select-target.hide
-      %input#tide-date-select-target-alt.hide{ value: params[:date] }
+      %input#tide-date-select-target-alt.hide{ value: @tide.date }
       = link_to region_index_path, remote: true, class: 'btn btn-info', id: 'port-select-button', data: { type: :html } do
         %i.glyphiconcon.glyphicon-globe
         %span= @tide.port_name

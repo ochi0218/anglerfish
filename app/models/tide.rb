@@ -28,9 +28,8 @@ class Tide < ActiveResource::Base
     # 指定の港名から指定の日付の潮汐情報を取得する。
     #
     def self.get(date, port)
-        port_param = port.presence || default_port
-        date_param = parse_date(date).presence || Date.today
-        date_param = date.strftime(TIDE_GET_DATE_PARAM_FORMAT) unless date == TIDE_GET_DATE_PARAM_VALUE_OF_TODAY
+        port_param = port.presence || default_port_name
+        date_param = convert_date_param(date)
 
         model = Tide.find(:one, from: '/tide', params: { p: port_param, d: date_param }) 
         model.tap {|m| bind_addtional_attr m } unless model.nil?
@@ -82,7 +81,7 @@ class Tide < ActiveResource::Base
    #
    # 初回表示する港名を取得する。
    #
-   def default_port
+   def self.default_port_name
      Port.first.name
    end
 
@@ -90,14 +89,13 @@ class Tide < ActiveResource::Base
    # 表示日付のパラメータを取得する。
    # パラメータが存在し、日付として解析できるもののみパラメータとして認める。
    #
-   def parse_date(date)
-       return nil unless date.present?
-  
+   def self.convert_date_param(date)
+     return TIDE_GET_DATE_PARAM_VALUE_OF_TODAY unless date.present?
 
-      begin
-          Date.parse(params[:date])
-      rescue
-        # 失敗した場合は無視。
-      end
+     begin
+       Date.parse(date).strftime(TIDE_GET_DATE_PARAM_FORMAT)
+     rescue
+       TIDE_GET_DATE_PARAM_VALUE_OF_TODAY
+     end
    end
 end

@@ -18,7 +18,11 @@ class FishingLogsController < ApplicationController
 
   # GET /fishing_logs/new
   def new
-    @fishing_log = FishingLog.new(fishing_log_params)
+    if params[:fishing_log]
+      @fishing_log = FishingLog.new(fishing_log_params)
+    else
+      @fishing_log = FishingLog.new
+    end
   end
 
   # GET /fishing_logs/1/edit
@@ -28,7 +32,7 @@ class FishingLogsController < ApplicationController
   # POST /fishing_logs
   # POST /fishing_logs.json
   def create
-    current_user.fishing_logs.build(fishing_log_params)
+    @fishing_log = current_user.fishing_logs.build(fishing_log_params)
 
     respond_to do |format|
       if @fishing_log.save

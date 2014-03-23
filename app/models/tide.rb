@@ -64,15 +64,15 @@ class Tide < ActiveResource::Base
     #
     def self.bind_addtional_attr(model)
         model.date = Date.new(model.year.to_i, model.month.to_i, model.day.to_i)
-        model.sun_rise= Time.parse(model.hinode)
-        model.sun_set = Time.parse(model.hinoiri)
-        model.moon_rise = Time.parse(model.tsukinode)
-        model.moon_set = Time.parse(model.tsukinoiri)
+        model.sun_rise= safe_parse_time(model.hinode)
+        model.sun_set = safe_parse_time(model.hinoiri)
+        model.moon_rise = safe_parse_time(model.tsukinode)
+        model.moon_set = safe_parse_time(model.tsukinoiri)
 
         model.tides = model.tide.rstrip.split(/\r?\n/).map {|tide| 
             tide_infos = tide.chomp.split()
 
-            time = Time.parse(tide_infos[0])
+            time = safe_parse_time(tide_infos[0])
             tide_level = tide_infos[1].delete(TIDE_GET_RESULT_TIDE_LEVEL_UNIT).to_i
             { time: time, tide_level: tide_level }
         }
@@ -96,6 +96,19 @@ class Tide < ActiveResource::Base
        Date.parse(date).strftime(TIDE_GET_DATE_PARAM_FORMAT)
      rescue
        TIDE_GET_DATE_PARAM_VALUE_OF_TODAY
+     end
+   end
+
+   #
+   # 時刻をパースする
+   #
+   def self.safe_parse_time(time)
+     return nil unless time.present?
+
+     begin
+       Time.parse(time)
+     rescue
+       nil
      end
    end
 end

@@ -10,7 +10,10 @@ class Weather < ActiveResource::Base
   # 指定の港名から天気情報を取得する。
   #
   def self.get(port)
-    Weather.find(:one, from: '/forecast/webservice/json/v1', params: { city: '400040' })
+    weather_spot = weather_spot_id(port)
+    return nil if weather_spot.nil?
+
+    Weather.find(:one, from: '/forecast/webservice/json/v1', params: { city: weather_spot })
   end
 
   #
@@ -28,6 +31,16 @@ class Weather < ActiveResource::Base
   end
 
   private
+
+  #
+  # 天気予報のスポットIDを取得する
+  #
+  def self.weather_spot_id(port_name)
+    return nil unless port_name.present?
+
+    port = Port.find_by_name(port_name)
+    port.weather_spot_id unless port.nil?
+  end
 
   #
   # 安全に日付をパースする。

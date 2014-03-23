@@ -51,6 +51,9 @@ gem 'devise'
 gem 'carrierwave'
 gem 'fog'
 
+# SqlQuery generator
+gem 'squeel'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false

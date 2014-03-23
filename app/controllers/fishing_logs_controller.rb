@@ -8,7 +8,7 @@ class FishingLogsController < ApplicationController
   # GET /fishing_logs
   # GET /fishing_logs.json
   def index
-    @fishing_logs = current_user.fishing_logs.page(params[:page])
+    @fishing_logs = FishingLog.search(params[:search], params[:page])
   end
 
   # GET /fishing_logs/1

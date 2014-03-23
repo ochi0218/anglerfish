@@ -10,4 +10,22 @@ class FishingLog < ActiveRecord::Base
     scope :by_newest, order('fishing_date DESC, fishing_time DESC')
 
     default_scope by_newest
+
+    #
+    # 検索オブジェクトから検索する。
+    #
+    def self.search(search, page)
+      User.current.fishing_logs.where(build_search_condition(search)).page(page)
+    end
+
+    private
+
+    #
+    # 検索条件を作成する。
+    #
+    def self.build_search_condition(search)
+      return squeel{} if search.nil?
+
+      squeel{ fish_name.matches("%#{search[:fish_name]}%") & fishing_point_name.matches("%#{search[:fishing_point_name]}%") }
+    end
 end

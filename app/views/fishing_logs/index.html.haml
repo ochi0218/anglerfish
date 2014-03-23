@@ -1,6 +1,14 @@
 - @page_title = t('helpers.titles.list', model: t('activerecord.models.fishing_log'))
 - @page_category = 'fishing_logs'
 
+%div
+  = simple_form_for :search, url: fishing_logs_path, method: :get, html: { class: 'form-horizontal well form-search' } do |f|
+    = f.input :fish_name, as: :string, label: t('.search_form.fish_name'), input_html: { value: (params[:search].nil? ? '' : params[:search][:fish_name]) }
+    = f.input :fishing_point_name, as: :string, label: t('.search_form.fishing_point_name'), input_html: { value: (params[:search].nil? ? '' : params[:search][:fishing_point_name]) }
+
+    .form-actions
+      = f.button :submit, t('.search_form.button') , class: 'btn-info'
+
 %p
   %span.pull-left= t('views.page_info.page', current: @fishing_logs.current_page, total: @fishing_logs.num_pages)
   %span.pull-right= t('views.page_info.records', offset: @fishing_logs.offset_value+1, limit: (@fishing_logs.offset_value+@fishing_logs.length), total: @fishing_logs.total_count)
@@ -37,4 +45,4 @@
 
 %br
 
-= link_to(raw("<i class=\"glyphicon glyphicon-plus\"></i> #{t('fishing_logs.list.new_fishing_log')}"), new_fishing_log_path, class: 'btn btn-primary btn-white')
+= link_to(raw("<i class=\"glyphicon glyphicon-plus\"></i> #{t('.new_fishing_log')}"), new_fishing_log_path, class: 'btn btn-primary btn-white')

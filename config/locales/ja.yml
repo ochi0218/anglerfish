@@ -279,7 +279,11 @@ ja:
         port_select:
           title: '港選択'
   fishing_logs:
-    list:
+    index:
+      search_form:
+        fish_name: '魚種'
+        fishing_point_name: '釣果場所'
+        button: '検索する'
       new_fishing_log: '釣果を入力する'
     create:
       notice: '登録に成功しました。'

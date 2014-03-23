@@ -74,9 +74,9 @@ class Tide < ActiveResource::Base
 
       time = safe_parse_time(tide_infos[0])
       tide_level = tide_infos[1].delete(TIDE_GET_RESULT_TIDE_LEVEL_UNIT).to_i
-        { time: time, tide_level: tide_level }
-      }
-    end
+      { time: time, tide_level: tide_level }
+    }
+  end
 
   #
   # 初回表示する港名を取得する。

@@ -273,6 +273,10 @@ ja:
         low_tide_caption: 干潮
         date: 時刻
         level: 潮位
+      weather_info:
+        temperature: "%{max} / %{min}"
+        other_link: 'livedoor天気へ'
+        no_information_message: 'この日付の天気情報は配信されていません。'
       button:
         new_fishing_logs: '釣果を入力する'
       dialog:
@@ -280,6 +284,7 @@ ja:
           title: '港選択'
   fishing_logs:
     index:
+      search_title: '検索条件'
       search_form:
         fish_name: '魚種'
         fishing_point_name: '釣果場所'

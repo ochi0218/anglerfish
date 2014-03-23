@@ -54,4 +54,47 @@
         }
     }
 }
+.weather-info {
+    padding-right: 20px;
+    .no-information {
+        margin-top: 20px;
+    }
+    div {
+        height: 75px;
+    }
+    .forecast {
+        border-bottom: 1px dotted #dcdcdc;
+        img {
+            width: 75px;
+            height: 75px;
+        }
+        span {
+            font-size: 1.8em;
+        }
+        span.unit {
+            image {
+                width: 55px;
+                height: 55px;
+            }
+        }
+    }
+    .temprature {
+        border-bottom: 1px dotted #dcdcdc;
+        img {
+            width: 75px;
+            height: 75px;
+        }
+        span {
+            font-size: 1.8em;
+        }
+    }
+    .other-link {
+        padding-top: 30px;
+        text-align: right;
+        a {
+            font-size: 1.0em;
+        }
+    }
+}
+
 

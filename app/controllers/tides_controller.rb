@@ -12,8 +12,9 @@ class TidesController < ApplicationController
 
     begin
       @tide = Tide.get @date, @port_name
+      @weather = Weather.get @port_name
     rescue ActiveResource::ConnectionError, ActiveResource::ServerError
-       flash.now[:alert] = I18n.t('errors.application_error.messages.rest_api_connection')
+      flash.now[:alert] = I18n.t('errors.application_error.messages.rest_api_connection')
     end
   end
 end

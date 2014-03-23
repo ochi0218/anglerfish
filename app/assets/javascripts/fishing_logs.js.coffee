@@ -12,3 +12,14 @@ $ ->
   selected_val = $('#fishing_date-alt').val()
   if (selected_val)
     $fishing_date.val($.datepicker.formatDate('yy年mm月dd日(D)', new Date(selected_val)))
+
+  $search_title = $('#search_title')
+  $search_title.on('click', ->
+    $('#search_form_wrapper').toggle('fast', ->
+      $icon = $search_title.find('i.glyphicon')
+      if($icon.hasClass('glyphicon-chevron-right')) 
+        $icon.removeClass('glyphicon-chevron-right').addClass('glyphicon-chevron-down')
+      else
+        $icon.removeClass('glyphicon-chevron-down').addClass('glyphicon-chevron-right')
+    )
+  );

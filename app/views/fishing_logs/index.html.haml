@@ -1,8 +1,9 @@
 - @page_title = t('helpers.titles.list', model: t('activerecord.models.fishing_log'))
 - @page_category = 'fishing_logs'
 
+%h4{ id: 'search_title' }= t('.search_title')
 %div
-  = simple_form_for :search, url: fishing_logs_path, method: :get, html: { class: 'form-horizontal well form-search' } do |f|
+  = simple_form_for :search, url: fishing_logs_path, method: :get, html: { class: 'form-horizontal well form-search', id: 'fishing_logs_search_form' } do |f|
     = f.input :fish_name, as: :string, label: t('.search_form.fish_name'), input_html: { value: (params[:search].nil? ? '' : params[:search][:fish_name]) }
     = f.input :fishing_point_name, as: :string, label: t('.search_form.fishing_point_name'), input_html: { value: (params[:search].nil? ? '' : params[:search][:fishing_point_name]) }
 

@@ -16,7 +16,7 @@ $ ->
   $search_title = $('#search_title')
   $search_title.on('click', ->
     $('#search_form_wrapper').toggle('fast', ->
-      $icon = $search_title.find('i.glyphicon')
+      $icon = $search_title.find('i.toggle-button')
       if($icon.hasClass('glyphicon-chevron-right')) 
         $icon.removeClass('glyphicon-chevron-right').addClass('glyphicon-chevron-down')
       else

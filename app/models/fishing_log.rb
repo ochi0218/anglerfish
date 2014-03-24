@@ -15,7 +15,7 @@ class FishingLog < ActiveRecord::Base
   # 検索オブジェクトから検索する。
   #
   def self.search(search, page)
-    User.current.fishing_logs.where(build_search_condition(search)).page(page)
+    where(build_search_condition(search)).page(page)
   end
 
   private

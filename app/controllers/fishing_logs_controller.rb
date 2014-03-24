@@ -8,7 +8,7 @@ class FishingLogsController < ApplicationController
   # GET /fishing_logs
   # GET /fishing_logs.json
   def index
-    @fishing_logs = FishingLog.search(params[:search], params[:page])
+    @fishing_logs = User.current.fishing_logs.search(params[:search], params[:page])
   end
 
   # GET /fishing_logs/1
@@ -32,7 +32,7 @@ class FishingLogsController < ApplicationController
   # POST /fishing_logs
   # POST /fishing_logs.json
   def create
-    @fishing_log = current_user.fishing_logs.build(fishing_log_params)
+    @fishing_log = User.current.fishing_logs.build(fishing_log_params)
 
     respond_to do |format|
       if @fishing_log.save
@@ -49,7 +49,7 @@ class FishingLogsController < ApplicationController
   # PATCH/PUT /fishing_logs/1.json
   def update
     respond_to do |format|
-      @fishing_log.user = current_user
+      @fishing_log.user = User.current
 
       if @fishing_log.update(fishing_log_params)
         format.html { redirect_to @fishing_log, notice: I18n.t('fishing_logs.update.notice') }
@@ -77,7 +77,7 @@ class FishingLogsController < ApplicationController
     # 釣果モデルを設定する。
     #
     def set_fishing_log
-      @fishing_log = FishingLog.where(user_id: current_user.id).find(params[:id])
+      @fishing_log = User.current.fishing_logs.find(params[:id])
     end
 
     #

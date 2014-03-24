@@ -274,7 +274,6 @@ ja:
         date: 時刻
         level: 潮位
       weather_info:
-        temperature: "%{max} / %{min}"
         other_link: 'livedoor天気へ'
         no_information_message: 'この日付の天気情報は配信されていません。'
       button:

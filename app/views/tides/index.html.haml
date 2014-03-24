@@ -46,7 +46,9 @@
         .temprature
           %span
             = image_tag '/assets/weather-icons/svg/Thermometer.svg'
-          %span= t('.weather_info.temperature', { max: forecast_of_tide_day.temperature.max.nil? ? '-' : forecast_of_tide_day.temperature.max.celsius, min: (forecast_of_tide_day.temperature.min.nil? ? '-' : forecast_of_tide_day.temperature.min.celsius) })
+          %span.max= forecast_of_tide_day.temperature.max.nil? ? '-' : forecast_of_tide_day.temperature.max.celsius
+          %span &nbsp;/&nbsp;
+          %span.min= forecast_of_tide_day.temperature.min.nil? ? '-' : forecast_of_tide_day.temperature.min.celsius
           %span.unit
             = image_tag '/assets/weather-icons/svg/Degrees-Celcius.svg'
         .other-link

@@ -1,1026 +1,1368 @@
 - id: 1
   pref_id: 1
   name: 函館
+  weather_spot_id: 017010
 - id: 2
   pref_id: 1
   name: 吉岡
+  weather_spot_id: 017010
 - id: 3
   pref_id: 1
   name: 室蘭
+  weather_spot_id: 015010
 - id: 4
   pref_id: 1
   name: 小樽
+  weather_spot_id: 015010
 - id: 5
   pref_id: 1
   name: 忍路
+  weather_spot_id: 012020
 - id: 6
   pref_id: 1
   name: 浦河
+  weather_spot_id: 015020
 - id: 7
   pref_id: 1
   name: 留萌
+  weather_spot_id: 012020
 - id: 8
   pref_id: 1
   name: 稚内
+  weather_spot_id: 011000
 - id: 9
   pref_id: 1
   name: 紋別
+  weather_spot_id: 013030
 - id: 10
   pref_id: 1
   name: 網走
+  weather_spot_id: 011000
 - id: 11
   pref_id: 1
   name: 花咲
+  weather_spot_id: 014010
 - id: 12
   pref_id: 1
   name: 苫小牧
+  weather_spot_id: 015010
 - id: 13
   pref_id: 1
   name: 釧路
+  weather_spot_id: 014020
 - id: 14
   pref_id: 2
   name: 三厩(ミンマヤ)
+  weather_spot_id: 020010
 - id: 15
   pref_id: 2
   name: 八戸
+  weather_spot_id: 020030
 - id: 16
   pref_id: 2
   name: 大湊
+  weather_spot_id: 020010
 - id: 17
   pref_id: 2
   name: 大畑
+  weather_spot_id: 020010
 - id: 18
   pref_id: 2
   name: 大間
+  weather_spot_id: 020010
 - id: 19
   pref_id: 2
   name: 小泊
+  weather_spot_id: 020010
 - id: 20
   pref_id: 2
   name: 小湊
+  weather_spot_id: 020010
 - id: 21
   pref_id: 2
   name: 尻矢
+  weather_spot_id: 020010
 - id: 22
   pref_id: 2
   name: 尻矢崎
+  weather_spot_id: 020010
 - id: 23
   pref_id: 2
   name: 岩崎
+  weather_spot_id: 020010
 - id: 24
   pref_id: 2
   name: 泊
+  weather_spot_id: 020010
 - id: 25
   pref_id: 2
   name: 浅虫
+  weather_spot_id: 020010
 - id: 26
   pref_id: 2
   name: 深浦
+  weather_spot_id: 020010
 - id: 27
   pref_id: 2
   name: 白糠
+  weather_spot_id: 020010
 - id: 28
   pref_id: 2
   name: 竜飛
+  weather_spot_id: 020010
 - id: 29
   pref_id: 2
   name: 龍飛崎
+  weather_spot_id: 020010
 - id: 30
   pref_id: 2
   name: 茂浦
+  weather_spot_id: 020010
 - id: 31
   pref_id: 2
   name: 野辺地
+  weather_spot_id: 020010
 - id: 32
   pref_id: 2
   name: 関根浜
+  weather_spot_id: 020010
 - id: 33
   pref_id: 2
   name: 青森
+  weather_spot_id: 020010
 - id: 34
   pref_id: 2
   name: 鯵ケ沢
+  weather_spot_id: 020010
 - id: 35
   pref_id: 3
   name: 久慈
+  weather_spot_id: 030010
 - id: 36
   pref_id: 3
   name: 八木
+  weather_spot_id: 030010
 - id: 37
   pref_id: 3
   name: 大船渡
+  weather_spot_id: 030010
 - id: 38
   pref_id: 3
   name: 宮古
+  weather_spot_id: 030010
 - id: 39
   pref_id: 3
   name: 山田
+  weather_spot_id: 030010
 - id: 40
   pref_id: 3
   name: 釜石
+  weather_spot_id: 030010
 - id: 41
   pref_id: 4
   name: 仙台
+  weather_spot_id: 040010
 - id: 42
   pref_id: 4
   name: 塩釜／仙台
+  weather_spot_id: 040010
 - id: 43
   pref_id: 4
   name: 塩釜／港橋
+  weather_spot_id: 040010
 - id: 44
   pref_id: 4
   name: 女川
+  weather_spot_id: 040010
 - id: 45
   pref_id: 4
   name: 志津川
+  weather_spot_id: 040010
 - id: 46
   pref_id: 4
   name: 気仙沼
+  weather_spot_id: 040010
 - id: 47
   pref_id: 4
   name: 港橋
+  weather_spot_id: 040010
 - id: 48
   pref_id: 4
   name: 石巻
+  weather_spot_id: 040010
 - id: 49
   pref_id: 4
   name: 石浜/松島湾
+  weather_spot_id: 040010
 - id: 50
   pref_id: 4
   name: 船越湾
+  weather_spot_id: 040010
 - id: 51
   pref_id: 4
   name: 花淵浜
+  weather_spot_id: 040010
 - id: 52
   pref_id: 4
   name: 荻浜
+  weather_spot_id: 040010
 - id: 53
   pref_id: 4
   name: 野蒜湾
+  weather_spot_id: 040010
 - id: 54
   pref_id: 4
   name: 閖上(ユリアゲ)
+  weather_spot_id: 040010
 - id: 55
   pref_id: 4
   name: 鮎川
+  weather_spot_id: 040010
 - id: 56
   pref_id: 5
   name: 岩舘
+  weather_spot_id: 050010
 - id: 57
   pref_id: 5
   name: 男鹿
+  weather_spot_id: 050010
 - id: 58
   pref_id: 5
   name: 秋田
+  weather_spot_id: 050010
 - id: 59
   pref_id: 5
   name: 金浦
+  weather_spot_id: 050010
 - id: 60
   pref_id: 6
   name: 加茂
+  weather_spot_id: 060010
 - id: 61
   pref_id: 6
   name: 由良
+  weather_spot_id: 060010
 - id: 62
   pref_id: 6
   name: 酒田
+  weather_spot_id: 060010
 - id: 63
   pref_id: 6
   name: 鼠ヶ関
+  weather_spot_id: 060010
 - id: 64
   pref_id: 7
   name: 四倉
+  weather_spot_id: 070010
 - id: 65
   pref_id: 7
   name: 夫沢
+  weather_spot_id: 070010
 - id: 66
   pref_id: 7
   name: 富岡/福島
+  weather_spot_id: 070010
 - id: 67
   pref_id: 7
   name: 小名浜
+  weather_spot_id: 070010
 - id: 68
   pref_id: 7
   name: 松川浦
+  weather_spot_id: 070010
 - id: 69
   pref_id: 7
   name: 相馬
+  weather_spot_id: 070010
 - id: 70
   pref_id: 8
   name: 大洗
+  weather_spot_id: 080010
 - id: 71
   pref_id: 8
   name: 大津
+  weather_spot_id: 080010
 - id: 72
   pref_id: 8
   name: 日立
+  weather_spot_id: 080010
 - id: 73
   pref_id: 8
   name: 那珂湊
+  weather_spot_id: 080010
 - id: 74
   pref_id: 8
   name: 鹿島
+  weather_spot_id: 080010
 - id: 75
   pref_id: 9
   name: 第一海堡
+  weather_spot_id: 120010
 - id: 76
   pref_id: 9
   name: 上総勝
+  weather_spot_id: 120010
 - id: 77
   pref_id: 9
   name: 上総勝浦
+  weather_spot_id: 120010
 - id: 78
   pref_id: 9
   name: 千葉灯
+  weather_spot_id: 120010
 - id: 79
   pref_id: 9
   name: 名洗
+  weather_spot_id: 120010
 - id: 80
   pref_id: 9
   name: 君津
+  weather_spot_id: 120010
 - id: 81
   pref_id: 9
   name: 姉崎
+  weather_spot_id: 120010
 - id: 82
   pref_id: 9
   name: 寒川/千葉
+  weather_spot_id: 120010
 - id: 83
   pref_id: 9
   name: 岩井袋
+  weather_spot_id: 120010
 - id: 84
   pref_id: 9
   name: 市原
+  weather_spot_id: 120010
 - id: 85
   pref_id: 9
   name: 市川
+  weather_spot_id: 120010
 - id: 86
   pref_id: 9
   name: 布良
+  weather_spot_id: 120010
 - id: 87
   pref_id: 9
   name: 犬吠崎
+  weather_spot_id: 120010
 - id: 88
   pref_id: 9
   name: 白浜／千葉
+  weather_spot_id: 120010
 - id: 89
   pref_id: 9
   name: 船橋
+  weather_spot_id: 120010
 - id: 90
   pref_id: 9
   name: 銚子漁港
+  weather_spot_id: 120010
 - id: 91
   pref_id: 9
   name: 銚子新地
+  weather_spot_id: 120010
 - id: 92
   pref_id: 9
   name: 銚子港
+  weather_spot_id: 120010
 - id: 93
   pref_id: 9
   name: 館山
+  weather_spot_id: 120010
 - id: 94
   pref_id: 9
   name: 鴨川
+  weather_spot_id: 120010
 - id: 95
   pref_id: 10
   name: 阿古／三宅島
+  weather_spot_id: 130010
 - id: 96
   pref_id: 10
   name: 二見
+  weather_spot_id: 130010
 - id: 97
   pref_id: 10
   name: 八重根
+  weather_spot_id: 130010
 - id: 98
   pref_id: 10
   name: 岡田
+  weather_spot_id: 130010
 - id: 99
   pref_id: 10
   name: 式根島
+  weather_spot_id: 130010
 - id: 100
   pref_id: 10
   name: 晴海
+  weather_spot_id: 130010
 - id: 101
   pref_id: 10
   name: 沖港／母島
+  weather_spot_id: 130010
 - id: 102
   pref_id: 10
   name: 波浮／伊豆大島
+  weather_spot_id: 130010
 - id: 103
   pref_id: 10
   name: 父島
+  weather_spot_id: 130010
 - id: 104
   pref_id: 10
   name: 西／硫黄島
+  weather_spot_id: 130010
 - id: 105
   pref_id: 10
   name: 神津島
+  weather_spot_id: 130010
 - id: 106
   pref_id: 10
   name: 神湊
+  weather_spot_id: 130010
 - id: 107
   pref_id: 10
   name: 築地
+  weather_spot_id: 130010
 - id: 108
   pref_id: 10
   name: 羽田
+  weather_spot_id: 130010
 - id: 109
   pref_id: 10
   name: 芝浦
+  weather_spot_id: 130010
 - id: 110
   pref_id: 10
   name: 阿古
+  weather_spot_id: 130010
 - id: 111
   pref_id: 10
   name: 鳥島
+  weather_spot_id: 130010
 - id: 112
   pref_id: 11
   name: 向ヶ崎/三崎
+  weather_spot_id: 140010
 - id: 113
   pref_id: 11
   name: 塩浜運
+  weather_spot_id: 140010
 - id: 114
   pref_id: 11
   name: 小田和湾
+  weather_spot_id: 140010
 - id: 115
   pref_id: 11
   name: 川崎／塩浜運河
+  weather_spot_id: 140010
 - id: 116
   pref_id: 11
   name: 新宿湾／逗子
+  weather_spot_id: 140010
 - id: 117
   pref_id: 11
   name: 新山下
+  weather_spot_id: 140010
 - id: 118
   pref_id: 11
   name: 新港
+  weather_spot_id: 140010
 - id: 119
   pref_id: 11
   name: 末広／鶴見
+  weather_spot_id: 140010
 - id: 120
   pref_id: 11
   name: 根岸
+  weather_spot_id: 140010
 - id: 121
   pref_id: 11
   name: 横浜新山下
+  weather_spot_id: 140010
 - id: 122
   pref_id: 11
   name: 横浜新港
+  weather_spot_id: 140010
 - id: 123
   pref_id: 11
   name: 横須賀
+  weather_spot_id: 140010
 - id: 124
   pref_id: 11
   name: 江ノ島
+  weather_spot_id: 140010
 - id: 125
   pref_id: 11
   name: 油壷
+  weather_spot_id: 140010
 - id: 126
   pref_id: 11
   name: 真鶴
+  weather_spot_id: 140010
 - id: 127
   pref_id: 11
   name: 走水
+  weather_spot_id: 140010
 - id: 128
   pref_id: 11
   name: 金田湾
+  weather_spot_id: 140010
 - id: 129
   pref_id: 11
   name: 長浦/横須賀
+  weather_spot_id: 140010
 - id: 130
   pref_id: 11
   name: 間口
+  weather_spot_id: 140010
 - id: 131
   pref_id: 12
   name: 小木
+  weather_spot_id: 150010
 - id: 132
   pref_id: 12
   name: 新潟東
+  weather_spot_id: 150010
 - id: 133
   pref_id: 12
   name: 新潟西
+  weather_spot_id: 150010
 - id: 134
   pref_id: 12
   name: 柏崎
+  weather_spot_id: 150010
 - id: 135
   pref_id: 12
   name: 直江津
+  weather_spot_id: 150010
 - id: 136
   pref_id: 12
   name: 粟島/新潟
+  weather_spot_id: 150010
 - id: 137
   pref_id: 12
   name: 能生
+  weather_spot_id: 150010
 - id: 138
   pref_id: 13
   name: 伏木
+  weather_spot_id: 160010
 - id: 139
   pref_id: 13
   name: 富山
+  weather_spot_id: 160010
 - id: 140
   pref_id: 14
   name: 輪島
+  weather_spot_id: 170010
 - id: 141
   pref_id: 14
   name: 金沢
+  weather_spot_id: 170010
 - id: 142
   pref_id: 15
   name: 三国
+  weather_spot_id: 180010
 - id: 143
   pref_id: 15
   name: 内浦
+  weather_spot_id: 180010
 - id: 144
   pref_id: 15
   name: 小浜
+  weather_spot_id: 180010
 - id: 145
   pref_id: 15
   name: 敦賀
+  weather_spot_id: 180010
 - id: 146
   pref_id: 15
   name: 福井
+  weather_spot_id: 180010
 - id: 147
   pref_id: 16
   name: 三保
+  weather_spot_id: 220010
 - id: 148
   pref_id: 16
   name: 三津
+  weather_spot_id: 220010
 - id: 149
   pref_id: 16
   name: 伊東
+  weather_spot_id: 220010
 - id: 150
   pref_id: 16
   name: 南伊豆
+  weather_spot_id: 220010
 - id: 151
   pref_id: 16
   name: 妻良子浦
+  weather_spot_id: 220010
 - id: 152
   pref_id: 16
   name: 宇久須
+  weather_spot_id: 220010
 - id: 153
   pref_id: 16
   name: 川奈
+  weather_spot_id: 220010
 - id: 154
   pref_id: 16
   name: 御前崎
+  weather_spot_id: 220010
 - id: 155
   pref_id: 16
   name: 御津/内浦
+  weather_spot_id: 220010
 - id: 156
   pref_id: 16
   name: 江ノ浦
+  weather_spot_id: 220010
 - id: 157
   pref_id: 16
   name: 清水
+  weather_spot_id: 220010
 - id: 158
   pref_id: 16
   name: 焼津
+  weather_spot_id: 220010
 - id: 159
   pref_id: 16
   name: 田子
+  weather_spot_id: 220010
 - id: 160
   pref_id: 16
   name: 田子の浦
+  weather_spot_id: 220010
 - id: 161
   pref_id: 16
   name: 白浜／伊豆
+  weather_spot_id: 220010
 - id: 162
   pref_id: 16
   name: 相良
+  weather_spot_id: 220010
 - id: 163
   pref_id: 16
   name: 網代／静岡
+  weather_spot_id: 220010
 - id: 164
   pref_id: 16
   name: 興津
+  weather_spot_id: 220010
 - id: 165
   pref_id: 16
   name: 舞阪
+  weather_spot_id: 220010
 - id: 166
   pref_id: 17
   name: 伊良湖
+  weather_spot_id: 230010
 - id: 167
   pref_id: 17
   name: 名古屋
+  weather_spot_id: 230010
 - id: 168
   pref_id: 17
   name: 師崎
+  weather_spot_id: 230010
 - id: 169
   pref_id: 17
   name: 武豊
+  weather_spot_id: 230010
 - id: 170
   pref_id: 17
   name: 蒲郡
+  weather_spot_id: 230010
 - id: 171
   pref_id: 17
   name: 豊橋
+  weather_spot_id: 230010
 - id: 172
   pref_id: 17
   name: 赤羽根
+  weather_spot_id: 230010
 - id: 173
   pref_id: 17
   name: 鬼崎
+  weather_spot_id: 230010
 - id: 174
   pref_id: 18
   name: 五ヵ所
+  weather_spot_id: 240010
 - id: 175
   pref_id: 18
   name: 四日市
+  weather_spot_id: 240010
 - id: 176
   pref_id: 18
   name: 尾鷲
+  weather_spot_id: 240010
 - id: 177
   pref_id: 18
   name: 松阪
+  weather_spot_id: 240010
 - id: 178
   pref_id: 18
   name: 的矢
+  weather_spot_id: 240010
 - id: 179
   pref_id: 18
   name: 神島
+  weather_spot_id: 240010
 - id: 180
   pref_id: 18
   name: 長島
+  weather_spot_id: 240010
 - id: 181
   pref_id: 18
   name: 鳥羽
+  weather_spot_id: 240010
 - id: 182
   pref_id: 19
   name: 宮津島崎
+  weather_spot_id: 260010
 - id: 183
   pref_id: 19
   name: 舞鶴東
+  weather_spot_id: 260010
 - id: 184
   pref_id: 19
   name: 舞鶴西
+  weather_spot_id: 260010
 - id: 185
   pref_id: 20
   name: 堺
+  weather_spot_id: 270000
 - id: 186
   pref_id: 20
   name: 大阪
+  weather_spot_id: 270000
 - id: 187
   pref_id: 20
   name: 岸和田
+  weather_spot_id: 270000
 - id: 188
   pref_id: 20
   name: 泉大津
+  weather_spot_id: 270000
 - id: 189
   pref_id: 20
   name: 淡輪
+  weather_spot_id: 270000
 - id: 190
   pref_id: 21
   name: 垂水
+  weather_spot_id: 280010
 - id: 191
   pref_id: 21
   name: 室津／淡路島
+  weather_spot_id: 280010
 - id: 192
   pref_id: 21
   name: 家島
+  weather_spot_id: 280010
 - id: 193
   pref_id: 21
   name: 尼崎
+  weather_spot_id: 280010
 - id: 194
   pref_id: 21
   name: 岩屋／淡路島
+  weather_spot_id: 280010
 - id: 195
   pref_id: 21
   name: 明石
+  weather_spot_id: 280010
 - id: 196
   pref_id: 21
   name: 江井
+  weather_spot_id: 280010
 - id: 197
   pref_id: 21
   name: 江崎
+  weather_spot_id: 280010
 - id: 198
   pref_id: 21
   name: 洲本
+  weather_spot_id: 280010
 - id: 199
   pref_id: 21
   name: 由良
+  weather_spot_id: 280010
 - id: 200
   pref_id: 21
   name: 神戸
+  weather_spot_id: 280010
 - id: 201
   pref_id: 21
   name: 福良
+  weather_spot_id: 280010
 - id: 202
   pref_id: 21
   name: 飾磨
+  weather_spot_id: 280010
 - id: 203
   pref_id: 21
   name: 高砂
+  weather_spot_id: 280010
 - id: 204
   pref_id: 22
   name: 下津
+  weather_spot_id: 300010
 - id: 205
   pref_id: 22
   name: 串本
+  weather_spot_id: 300010
 - id: 206
   pref_id: 22
   name: 和歌山
+  weather_spot_id: 300010
 - id: 207
   pref_id: 22
   name: 沖ノ島
+  weather_spot_id: 300010
 - id: 208
   pref_id: 22
   name: 浦神
+  weather_spot_id: 300010
 - id: 209
   pref_id: 22
   name: 海南
+  weather_spot_id: 300010
 - id: 210
   pref_id: 22
   name: 田辺
+  weather_spot_id: 300010
 - id: 211
   pref_id: 23
   name: 境
+  weather_spot_id: 310010
 - id: 212
   pref_id: 23
   name: 田後
+  weather_spot_id: 310010
 - id: 213
   pref_id: 24
   name: 外ノ浦
+  weather_spot_id: 320010
 - id: 214
   pref_id: 24
   name: 西郷
+  weather_spot_id: 320010
 - id: 215
   pref_id: 25
   name: 宇野
+  weather_spot_id: 330010
 - id: 216
   pref_id: 25
   name: 水島
+  weather_spot_id: 330010
 - id: 217
   pref_id: 25
   name: 笠岡
+  weather_spot_id: 330010
 - id: 218
   pref_id: 26
   name: 厳島
+  weather_spot_id: 340010
 - id: 219
   pref_id: 26
   name: 呉
+  weather_spot_id: 340010
 - id: 220
   pref_id: 26
   name: 尾道
+  weather_spot_id: 340010
 - id: 221
   pref_id: 26
   name: 広島
+  weather_spot_id: 340010
 - id: 222
   pref_id: 26
   name: 福山
+  weather_spot_id: 340010
 - id: 223
   pref_id: 26
   name: 竹原
+  weather_spot_id: 340010
 - id: 224
   pref_id: 26
   name: 糸崎
+  weather_spot_id: 340010
 - id: 225
   pref_id: 27
   name: 三田尻
+  weather_spot_id: 350020
 - id: 226
   pref_id: 27
   name: 上の関
+  weather_spot_id: 350020
 - id: 227
   pref_id: 27
   name: 下関桟橋
+  weather_spot_id: 350020
 - id: 228
   pref_id: 27
   name: 両源田
+  weather_spot_id: 350020
 - id: 229
   pref_id: 27
   name: 南風泊
+  weather_spot_id: 350020
 - id: 230
   pref_id: 27
   name: 壇ノ浦
+  weather_spot_id: 350020
 - id: 231
   pref_id: 27
   name: 大山ノ鼻
+  weather_spot_id: 350020
 - id: 232
   pref_id: 27
   name: 大泊／仙崎
+  weather_spot_id: 350020
 - id: 233
   pref_id: 27
   name: 宇部
+  weather_spot_id: 350020
 - id: 234
   pref_id: 27
   name: 岩国
+  weather_spot_id: 350020
 - id: 235
   pref_id: 27
   name: 弟子待
+  weather_spot_id: 350020
 - id: 236
   pref_id: 27
   name: 徳山
+  weather_spot_id: 350020
 - id: 237
   pref_id: 27
   name: 東安下庄
+  weather_spot_id: 350020
 - id: 238
   pref_id: 27
   name: 沖家室島
+  weather_spot_id: 350020
 - id: 239
   pref_id: 27
   name: 油谷
+  weather_spot_id: 350020
 - id: 240
   pref_id: 27
   name: 田の首
+  weather_spot_id: 350020
 - id: 241
   pref_id: 27
   name: 萩
+  weather_spot_id: 350020
 - id: 242
   pref_id: 27
   name: 長府
+  weather_spot_id: 350020
 - id: 243
   pref_id: 28
   name: 堂ノ浦
+  weather_spot_id: 360010
 - id: 244
   pref_id: 28
   name: 小松島
+  weather_spot_id: 360010
 - id: 245
   pref_id: 29
   name: 与島
+  weather_spot_id: 370000
 - id: 246
   pref_id: 29
   name: 佐柳
+  weather_spot_id: 370000
 - id: 247
   pref_id: 29
   name: 坂出
+  weather_spot_id: 370000
 - id: 248
   pref_id: 29
   name: 坂手
+  weather_spot_id: 370000
 - id: 249
   pref_id: 29
   name: 引田
+  weather_spot_id: 370000
 - id: 250
   pref_id: 29
   name: 男木島
+  weather_spot_id: 370000
 - id: 251
   pref_id: 29
   name: 粟島/香川
+  weather_spot_id: 370000
 - id: 252
   pref_id: 29
   name: 青木
+  weather_spot_id: 370000
 - id: 253
   pref_id: 29
   name: 高松
+  weather_spot_id: 370000
 - id: 254
   pref_id: 30
   name: 三島
+  weather_spot_id: 380010
 - id: 255
   pref_id: 30
   name: 三机
+  weather_spot_id: 380010
 - id: 256
   pref_id: 30
   name: 今治
+  weather_spot_id: 380010
 - id: 257
   pref_id: 30
   name: 八幡浜
+  weather_spot_id: 380010
 - id: 258
   pref_id: 30
   name: 宇和島
+  weather_spot_id: 380010
 - id: 259
   pref_id: 30
   name: 小島
+  weather_spot_id: 380010
 - id: 260
   pref_id: 30
   name: 新居浜
+  weather_spot_id: 380010
 - id: 261
   pref_id: 30
   name: 日振島
+  weather_spot_id: 380010
 - id: 262
   pref_id: 30
   name: 松山
+  weather_spot_id: 380010
 - id: 263
   pref_id: 30
   name: 波止浜
+  weather_spot_id: 380010
 - id: 264
   pref_id: 30
   name: 興居島
+  weather_spot_id: 380010
 - id: 265
   pref_id: 30
   name: 菊間
+  weather_spot_id: 380010
 - id: 266
   pref_id: 30
   name: 西条
+  weather_spot_id: 380010
 - id: 267
   pref_id: 30
   name: 長浜
+  weather_spot_id: 380010
 - id: 268
   pref_id: 30
   name: 青島
+  weather_spot_id: 380010
 - id: 269
   pref_id: 30
   name: 鼻粟瀬
+  weather_spot_id: 380010
 - id: 270
   pref_id: 31
   name: 土佐清
+  weather_spot_id: 390010
 - id: 271
   pref_id: 31
   name: 室戸岬
+  weather_spot_id: 390010
 - id: 272
   pref_id: 31
   name: 高知
+  weather_spot_id: 390010
 - id: 273
   pref_id: 32
   name: 三池
+  weather_spot_id: 400010
 - id: 274
   pref_id: 32
   name: 八幡
+  weather_spot_id: 400010
 - id: 275
   pref_id: 32
   name: 博多船
+  weather_spot_id: 400010
 - id: 276
   pref_id: 32
   name: 室戸岬
+  weather_spot_id: 400010
 - id: 277
   pref_id: 32
   name: 日明
+  weather_spot_id: 400010
 - id: 278
   pref_id: 32
   name: 旧門司
+  weather_spot_id: 400010
 - id: 279
   pref_id: 32
   name: 砂津
+  weather_spot_id: 400010
 - id: 280
   pref_id: 32
   name: 福岡船
+  weather_spot_id: 400010
 - id: 281
   pref_id: 32
   name: 苅田
+  weather_spot_id: 400010
 - id: 282
   pref_id: 32
   name: 若松
+  weather_spot_id: 400010
 - id: 283
   pref_id: 32
   name: 西海岸
+  weather_spot_id: 400010
 - id: 284
   pref_id: 32
   name: 青浜
+  weather_spot_id: 400010
 - id: 285
   pref_id: 33
   name: 仮屋
+  weather_spot_id: 410010
 - id: 286
   pref_id: 33
   name: 唐津
+  weather_spot_id: 410010
 - id: 287
   pref_id: 33
   name: 竹崎島
+  weather_spot_id: 410010
 - id: 288
   pref_id: 34
   name: 久根浜
+  weather_spot_id: 420010
 - id: 289
   pref_id: 34
   name: 佐世保
+  weather_spot_id: 420010
 - id: 290
   pref_id: 34
   name: 佐賀／対馬
+  weather_spot_id: 420010
 - id: 291
   pref_id: 34
   name: 佐須奈
+  weather_spot_id: 420010
 - id: 292
   pref_id: 34
   name: 厳原
+  weather_spot_id: 420010
 - id: 293
   pref_id: 34
   name: 口之津
+  weather_spot_id: 420010
 - id: 294
   pref_id: 34
   name: 巌原／対馬
+  weather_spot_id: 420010
 - id: 295
   pref_id: 34
   name: 志々伎湾
+  weather_spot_id: 420010
 - id: 296
   pref_id: 34
   name: 松ヶ枝
+  weather_spot_id: 420010
 - id: 297
   pref_id: 34
   name: 松浦
+  weather_spot_id: 420010
 - id: 298
   pref_id: 34
   name: 深堀
+  weather_spot_id: 420010
 - id: 299
   pref_id: 34
   name: 福江
+  weather_spot_id: 420010
 - id: 300
   pref_id: 34
   name: 芦辺
+  weather_spot_id: 420010
 - id: 301
   pref_id: 34
   name: 郷ノ浦／壱岐
+  weather_spot_id: 420010
 - id: 302
   pref_id: 34
   name: 青方
+  weather_spot_id: 420010
 - id: 303
   pref_id: 34
   name: 鴨居瀬／対馬
+  weather_spot_id: 420010
 - id: 304
   pref_id: 35
   name: 三角
+  weather_spot_id: 430010
 - id: 305
   pref_id: 35
   name: 八代
+  weather_spot_id: 430010
 - id: 306
   pref_id: 35
   name: 富岡／天草
+  weather_spot_id: 430010
 - id: 307
   pref_id: 35
   name: 本渡
+  weather_spot_id: 430010
 - id: 308
   pref_id: 35
   name: 柳ノ瀬戸／天草
+  weather_spot_id: 430010
 - id: 309
   pref_id: 35
   name: 水俣
+  weather_spot_id: 430010
 - id: 310
   pref_id: 35
   name: 池の浦／龍ケ岳
+  weather_spot_id: 430010
 - id: 311
   pref_id: 35
   name: 熊本
+  weather_spot_id: 430010
 - id: 312
   pref_id: 35
   name: 牛深／天草
+  weather_spot_id: 430010
 - id: 313
   pref_id: 35
   name: 袋浦／水俣
+  weather_spot_id: 430010
 - id: 314
   pref_id: 35
   name: 長州／熊本
+  weather_spot_id: 430010
 - id: 315
   pref_id: 36
   name: 下浦
+  weather_spot_id: 440010
 - id: 316
   pref_id: 36
   name: 姫島
+  weather_spot_id: 440010
 - id: 317
   pref_id: 36
   name: 西大分
+  weather_spot_id: 440010
 - id: 318
   pref_id: 36
   name: 長島
+  weather_spot_id: 440010
 - id: 319
   pref_id: 36
   name: 高田
+  weather_spot_id: 440010
 - id: 320
   pref_id: 36
   name: 鶴崎
+  weather_spot_id: 440010
 - id: 321
   pref_id: 37
   name: 宮崎
+  weather_spot_id: 450010
 - id: 322
   pref_id: 37
   name: 油津
+  weather_spot_id: 450010
 - id: 323
   pref_id: 37
   name: 細島
+  weather_spot_id: 450010
 - id: 324
   pref_id: 38
   name: 中之島
+  weather_spot_id: 460010
 - id: 325
   pref_id: 38
   name: 古仁屋
+  weather_spot_id: 460010
 - id: 326
   pref_id: 38
   name: 名瀬
+  weather_spot_id: 460010
 - id: 327
   pref_id: 38
   name: 喜入
+  weather_spot_id: 460010
 - id: 328
   pref_id: 38
   name: 大泊
+  weather_spot_id: 460010
 - id: 329
   pref_id: 38
   name: 枕崎
+  weather_spot_id: 460010
 - id: 330
   pref_id: 38
   name: 西之表
+  weather_spot_id: 460010
 - id: 331
   pref_id: 38
   name: 阿久根
+  weather_spot_id: 460010
 - id: 332
   pref_id: 38
   name: 鹿児島
+  weather_spot_id: 460010
 - id: 333
   pref_id: 39
   name: 平良
+  weather_spot_id: 471010
 - id: 334
   pref_id: 39
   name: 波照間島
+  weather_spot_id: 471010
 - id: 335
   pref_id: 39
   name: 石垣
+  weather_spot_id: 471010
 - id: 336
   pref_id: 39
   name: 石川
+  weather_spot_id: 471010
 - id: 337
   pref_id: 39
   name: 白浜／西表島
+  weather_spot_id: 471010
 - id: 338
   pref_id: 39
   name: 那覇
+  weather_spot_id: 471010
 - id: 339
   pref_id: 40
   name: セブー(Cebu)
+  weather_spot_id:
 - id: 340
   pref_id: 40
   name: ポナペ
+  weather_spot_id:
 - id: 341
   pref_id: 40
   name: 片岡湾
+  weather_spot_id:
 - id: 342
   pref_id: 40
   name: サイパン島
+  weather_spot_id: 

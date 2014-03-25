@@ -55,5 +55,6 @@
       %p
         = linebreak_to_br @fishing_log.comment
 
-= link_to raw("<i class=\"\"></i> #{t('helpers.actions.edit')}"), edit_fishing_log_path(@fishing_log), class: 'btn btn-primary btn-white'
-
+= link_to edit_fishing_log_path(@fishing_log), class: 'btn btn-primary btn-white' do
+  %i.glyphicon.glyphicon-edit
+  = t('helpers.actions.edit')

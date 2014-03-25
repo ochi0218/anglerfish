@@ -1,6 +1,22 @@
 - @page_title = t('helpers.titles.list', model: t('activerecord.models.fishing_log'))
 - @page_category = 'fishing_logs'
 
+%h4.search_title{ id: 'search_title' }
+  %i.glyphicon.glyphicon-search
+  = t('.search_title')
+  %small
+    - if params[:search].nil?
+      %i.toggle-button.glyphicon.glyphicon-chevron-right
+    - else
+      %i.toggle-button.glyphicon.glyphicon-chevron-down
+%div{ id: 'search_form_wrapper', style: (params[:search].nil? ? 'display: none;' : 'display: block;') }
+  = simple_form_for :search, url: fishing_logs_path, method: :get, html: { class: 'form-horizontal well form-search', id: 'fishing_logs_search_form' } do |f|
+    = f.input :fish_name, as: :string, label: t('.search_form.fish_name'), input_html: { value: (params[:search].nil? ? '' : params[:search][:fish_name]) }
+    = f.input :fishing_point_name, as: :string, label: t('.search_form.fishing_point_name'), input_html: { value: (params[:search].nil? ? '' : params[:search][:fishing_point_name]) }
+
+    .form-actions
+      = f.button :submit, t('.search_form.button') , class: 'btn-info'
+
 %p
   %span.pull-left= t('views.page_info.page', current: @fishing_logs.current_page, total: @fishing_logs.num_pages)
   %span.pull-right= t('views.page_info.records', offset: @fishing_logs.offset_value+1, limit: (@fishing_logs.offset_value+@fishing_logs.length), total: @fishing_logs.total_count)
@@ -30,11 +46,19 @@
       %td= l fishing_log.fishing_time, format: :time_only
       %td= fishing_log.bait
       %td= link_to t('helpers.actions.show'), fishing_log, class: 'btn btn-default btn-xs'
-      %td= link_to raw("<i class=\"glyphicon glyphicon-edit\"></i> #{t('helpers.actions.edit')}"), edit_fishing_log_path(fishing_log), class: 'btn btn-default btn-xs'
-      %td= link_to raw("<i class=\"glyphicon glyphicon-trash\"></i> #{t('helpers.actions.destroy')}"), fishing_log, :method => :delete, :data => { :confirm => t('helpers.confirm.delete') }, class: 'btn btn-danger btn-xs btn-white'
+      %td
+        = link_to edit_fishing_log_path(fishing_log), class: 'btn btn-default btn-xs' do
+          %i.glyphicon.glyphicon-edit
+          = t('helpers.actions.edit')
+      %td
+        = link_to fishing_log, :method => :delete, :data => { :confirm => t('helpers.confirm.delete') }, class: 'btn btn-danger btn-xs btn-white' do
+          %i.glyphicon.glyphicon-trash
+          = t('helpers.actions.destroy')
 
 = paginate @fishing_logs
 
 %br
 
-= link_to(raw("<i class=\"glyphicon glyphicon-plus\"></i> #{t('fishing_logs.list.new_fishing_log')}"), new_fishing_log_path, class: 'btn btn-primary btn-white')
+= link_to new_fishing_log_path, class: 'btn btn-primary btn-white' do
+  %i.glyphicon.glyphicon-plus
+  = t('.new_fishing_log')

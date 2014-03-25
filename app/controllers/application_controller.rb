@@ -1,13 +1,13 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
+  before_filter :set_current_user
 
-  rescue_from ActiveResource::ConnectionError, ActiveResource::ServerError, with: :render_rest_api_connection_error
+  private
 
   #
-  # REST-APIの通信エラーを表示する。
+  # 現在ユーザを設定する。
   #
-  def render_rest_api_connection_error
-      flash[:error_message] = I18n.t('errors.application_error.messages.rest_api_connection')
-      render template: '/errors/application_error', layout: 'application_error', status: 500
+  def set_current_user
+    User.current = current_user
   end
 end

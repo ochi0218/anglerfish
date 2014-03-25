@@ -5,61 +5,81 @@
     .btn-group
       = button_tag class: 'btn btn-info', id: 'tide-date-select-button' do
         %i.glyphicon.glyphicon-calendar
-        %span= l @tide.date, format: :long
+        %span= l parse_date(@date), format: :long
       %input#tide-date-select-target.hide
-      %input#tide-date-select-target-alt.hide{ value: params[:date] }
+        %input#tide-date-select-target-alt.hide{ value: parse_date(@date) }
       = link_to region_index_path, remote: true, class: 'btn btn-info', id: 'port-select-button', data: { type: :html } do
         %i.glyphiconcon.glyphicon-globe
-        %span= @tide.port_name
+        %span= @port_name
   .col-md-4
     = link_to new_fishing_log_path, method: :get, class: 'btn btn-primary btn-white', id: 'new-fishing-log-link' do
       %i.glyphiconcon.glyphicon-plus
-      = t('.button.new_fishing_logs')
-.row
-  .col-md-5.tide-info
-    = image_tag '/assets/tide-icons/svg/tide.svg', class: 'tide-img'
-    %p.tide-name= @tide.tide_name
-  .col-md-7.tide-relation-info
-    .moon-age
-      %span
-        = image_tag moon_age_image(@tide.moon_age)
-      %span= @tide.moon_age
-    .sun-rise
-      %span
-        = image_tag '/assets/weather-icons/svg/Sunrise.svg'
-      %span= l @tide.sun_rise, format: :time_only
-    .sun-set
-      %span
-        = image_tag '/assets/weather-icons/svg/Sunset.svg'
-      %span= l @tide.sun_set, format: :time_only
+        = t('.button.new_fishing_logs')
+-if @tide
+  .row
+    .col-md-4.tide-info
+      = image_tag '/assets/tide-icons/svg/tide.svg', class: 'tide-img'
+      %p.tide-name= @tide.tide_name
+    .col-md-4.tide-relation-info
+      .moon-age
+        %span
+          = image_tag moon_age_image(@tide.moon_age)
+        %span= @tide.moon_age
+      .sun-rise
+        %span
+          = image_tag '/assets/weather-icons/svg/Sunrise.svg'
+        %span= l @tide.sun_rise, format: :time_only
+      .sun-set
+        %span
+          = image_tag '/assets/weather-icons/svg/Sunset.svg'
+        %span= l @tide.sun_set, format: :time_only
+    .col-md-4.weather-info
+      - forecast_of_tide_day = @weather.forecast_of_date(@tide.date)
+      - if forecast_of_tide_day.nil?
+        .no-information.well
+          %p= t('.weather_info.no_information_message')
+      - else
+        .forecast
+          %span
+            = image_tag weather_image(forecast_of_tide_day.image.url)
+          %span= forecast_of_tide_day.telop
+        .temprature
+          %span
+            = image_tag '/assets/weather-icons/svg/Thermometer.svg'
+          %span.max= forecast_of_tide_day.temperature.max.nil? ? '-' : forecast_of_tide_day.temperature.max.celsius
+          %span &nbsp;/&nbsp;
+          %span.min= forecast_of_tide_day.temperature.min.nil? ? '-' : forecast_of_tide_day.temperature.min.celsius
+          %span.unit
+            = image_tag '/assets/weather-icons/svg/Degrees-Celcius.svg'
+        .other-link
+          = link_to t('.weather_info.other_link'), @weather.link, target: '_blank'
+  %h3= t('.tide_table.high_tide_caption')
+  %table.table
+    %tr
+      -@tide.high_tides.size.times do
+        %th= t('.tide_table.date')
+        %th= t('.tide_table.level')
+    %tr
+      -@tide.high_tides.each do |tide|
+        %td= l tide[:time], format: :time_only unless tide.nil?
+        %td= number_to_human tide[:tide_level], units: { unit: 'cm' }  unless tide.nil?
 
-%h3= t('.tide_table.high_tide_caption')
-%table.table
-  %tr
-    -@tide.high_tides.size.times do
-      %th= t('.tide_table.date')
-      %th= t('.tide_table.level')
-  %tr
-    -@tide.high_tides.each do |tide|
-      %td= l tide[:time], format: :time_only unless tide.nil?
-      %td= number_to_human tide[:tide_level], units: { unit: 'cm' }  unless tide.nil?
-
-%h3= t('.tide_table.low_tide_caption')
-%table.table
-  %tr
-    -@tide.low_tides.size.times do
-      %th= t('.tide_table.date')
-      %th= t('.tide_table.level')
-  %tr
-    -@tide.low_tides.each do |tide|
-      %td= l tide[:time], format: :time_only unless tide.nil?
-      %td= number_to_human tide[:tide_level], units: { unit: 'cm' }  unless tide.nil?
+  %h3= t('.tide_table.low_tide_caption')
+  %table.table
+    %tr
+      -@tide.low_tides.size.times do
+        %th= t('.tide_table.date')
+        %th= t('.tide_table.level')
+    %tr
+      -@tide.low_tides.each do |tide|
+        %td= l tide[:time], format: :time_only unless tide.nil?
+        %td= number_to_human tide[:tide_level], units: { unit: 'cm' }  unless tide.nil?
 
 %div#port-select-dialog{ title: t('.dialog.port_select.title') }
 
 = form_tag root_path, method: :get, class: 'hide', id: 'tide-search-form' do
-  = date_field_tag :date, @tide.date, class: :date
-  = text_field_tag :port_name, remove_bom(@tide.port_name), class: :port_name
+  = date_field_tag :date, parse_date(@date), class: :date
+  = text_field_tag :port_name, @port_name, class: :port_name
 = form_tag new_fishing_log_path, method: :get, class: 'hide', id: 'new-fishing-log-form' do
   = date_field :fishing_log, :fishing_date, class: :date
   = text_field :fishing_log, :fishing_point_name, class: :port_name

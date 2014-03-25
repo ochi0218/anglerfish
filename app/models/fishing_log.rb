@@ -13,7 +13,6 @@ class FishingLog < ActiveRecord::Base
   scope :by_newest, order('fishing_date DESC, fishing_time DESC')
   default_scope by_newest
   
-
   #
   # 検索オブジェクトから検索する。
   #
@@ -25,11 +24,17 @@ class FishingLog < ActiveRecord::Base
 
   private
 
+  #
+  # 魚種を含む検索オブジェクト。
+  #
   def self.fish_name_contains(value)
     return squeel{} unless value.present?
     squeel{ fish_name.matches("%#{value}%") }
   end
 
+  #
+  # 釣果場所を含む検索オブジェクト
+  #
   def self.fishing_point_name_contains(value)
     return squeel{} unless value.present?
     squeel{ fishing_point_name.matches("%#{value}%") }

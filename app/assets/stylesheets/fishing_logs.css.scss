@@ -16,3 +16,11 @@
     margin-bottom: 10px;
     border-bottom: 1px dotted #dcdcdc;
 }
+.simple_form {
+    .fishing_log_fishing_date {
+        input.readonly {
+            cursor: pointer;
+            background-color: #fff;
+        }
+    }
+}

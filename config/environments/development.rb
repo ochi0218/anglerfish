@@ -14,16 +14,10 @@ Rails.application.configure do
   config.action_controller.perform_caching = false
 
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
-  config.action_mailer.default_url_options = { host: 'localhost:3000' }
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-      :address => 'smtp.gmail.com',
-      :port => 587,
-      :authentication => :plain,
-      :user_name => 'dev.angler.fish@gmail.com',
-      :password => 'devangler001'
-    }
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.default_url_options = { host: 'anglerfish.dev' }
+  config.action_mailer.delivery_method = :letter_opener
+
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 
@@ -33,13 +27,24 @@ Rails.application.configure do
   # Debug mode disables concatenation and preprocessing of assets.
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
+  config.assets.compile = true
+  config.assets.compress = false
   config.assets.debug = true
+  config.assets.digest = false
 
   # Adds additional error checking when serving assets at runtime.
   # Checks for improperly declared sprockets dependencies.
   # Raises helpful error messages.
-  config.assets.raise_runtime_errors = true
+  config.assets.raise_runtime_errors = false
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+    config.after_initialize do
+      Bullet.enable = true # Bulletプラグインを有効/無効
+      Bullet.alert = true # JavaScriptでの通知
+      Bullet.bullet_logger = true # log/bullet.logへの出力
+      Bullet.console = true # ブラウザのコンソールログに記録
+      Bullet.rails_logger = true # Railsログに出力
+    end
 end

@@ -10,12 +10,12 @@
     - else
       %i.toggle-button.glyphicon.glyphicon-chevron-down
 %div{ id: 'search_form_wrapper', style: (params[:search].nil? ? 'display: none;' : 'display: block;') }
-  = simple_form_for :search, url: fishing_logs_path, method: :get, html: { class: 'form-horizontal well form-search', id: 'fishing_logs_search_form' } do |f|
-    = f.input :fish_name, as: :string, label: t('.search_form.fish_name'), input_html: { value: (params[:search].nil? ? '' : params[:search][:fish_name]) }
-    = f.input :fishing_point_name, as: :string, label: t('.search_form.fishing_point_name'), input_html: { value: (params[:search].nil? ? '' : params[:search][:fishing_point_name]) }
+  = search_form_for @search, url: fishing_logs_path, builder: SimpleForm::FormBuilder, html: { class: 'form-horizontal well form-search', id: 'fishing_logs_search_form' } do |f|
+    = f.input :fish_name_cont, label: FishingLog.human_attribute_name(:fish_name)
+    = f.input :fishing_point_name_cont, label: FishingLog.human_attribute_name(:fishing_point_name)
 
     .form-actions
-      = f.button :submit, t('.search_form.button') , class: 'btn-info'
+      = f.button :submit, t('.search_form.button'), class: 'btn-info'
 
 %p
   %span.pull-left= t('views.page_info.page', current: @fishing_logs.current_page, total: @fishing_logs.num_pages)
@@ -23,14 +23,14 @@
   %span.clearfix
 %table.table.table-striped.table-hover
   %tr
-    %th #{t('activerecord.attributes.fishing_log.fish_name')}
-    %th #{t('activerecord.attributes.fishing_log.fish_length')}
-    %th #{t('activerecord.attributes.fishing_log.fish_weight')}
-    %th #{t('activerecord.attributes.fishing_log.fishing_point_name')}
-    %th #{t('activerecord.attributes.fishing_log.fishing_method')}
-    %th #{t('activerecord.attributes.fishing_log.fishing_date')}
-    %th #{t('activerecord.attributes.fishing_log.fishing_time')}
-    %th #{t('activerecord.attributes.fishing_log.bait')}
+    %th= sort_link @search, FishingLog.human_attribute_name(:fish_name)
+    %th= sort_link @search, FishingLog.human_attribute_name(:fish_length)
+    %th= sort_link @search, FishingLog.human_attribute_name(:fish_weight)
+    %th= sort_link @search, FishingLog.human_attribute_name(:fishing_point_name)
+    %th= sort_link @search, FishingLog.human_attribute_name(:fishing_method)
+    %th= sort_link @search, FishingLog.human_attribute_name(:fishing_date)
+    %th= sort_link @search, FishingLog.human_attribute_name(:fishing_time)
+    %th= sort_link @search, FishingLog.human_attribute_name(:bait)
     %th
     %th
     %th

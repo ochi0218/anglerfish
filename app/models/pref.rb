@@ -1,6 +1,3 @@
-# 
-# 都道府県
-#
 class Pref < StaticModel::Base
   set_data_file "#{Rails.root}/data/pref.yml"
 

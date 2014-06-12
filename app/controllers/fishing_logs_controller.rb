@@ -1,23 +1,16 @@
-#
-# 釣果ページコントローラ。
-#
 class FishingLogsController < ApplicationController
   before_action :set_fishing_log, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
 
-  # GET /fishing_logs
-  # GET /fishing_logs.json
   def index
-    # scopeを利用してメソッドチェーンで書く。
-    @fishing_logs = User.current.fishing_logs.search(params[:search], params[:page])
+    @search = current_user.fishing_logs.search(params[:q])
+    @search.sorts = ['fishing_date desc'] if @search.sorts.empty?
+    @fishing_logs = @search.result.page(params[:page])
   end
 
-  # GET /fishing_logs/1
-  # GET /fishing_logs/1.json
   def show
   end
 
-  # GET /fishing_logs/new
   def new
     if params[:fishing_log]
       @fishing_log = FishingLog.new(fishing_log_params)
@@ -26,14 +19,11 @@ class FishingLogsController < ApplicationController
     end
   end
 
-  # GET /fishing_logs/1/edit
   def edit
   end
 
-  # POST /fishing_logs
-  # POST /fishing_logs.json
   def create
-    @fishing_log = User.current.fishing_logs.build(fishing_log_params)
+    @fishing_log = current_user.fishing_logs.build(fishing_log_params)
 
     respond_to do |format|
       if @fishing_log.save
@@ -46,11 +36,9 @@ class FishingLogsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /fishing_logs/1
-  # PATCH/PUT /fishing_logs/1.json
   def update
     respond_to do |format|
-      @fishing_log.user = User.current
+      @fishing_log.user = current_user
 
       if @fishing_log.update(fishing_log_params)
         format.html { redirect_to @fishing_log, notice: I18n.t('fishing_logs.update.notice') }
@@ -62,8 +50,6 @@ class FishingLogsController < ApplicationController
     end
   end
 
-  # DELETE /fishing_logs/1
-  # DELETE /fishing_logs/1.json
   def destroy
     @fishing_log.destroy
     respond_to do |format|
@@ -72,19 +58,12 @@ class FishingLogsController < ApplicationController
     end
   end
 
-  private
-  
-    #
-    # 釣果モデルを設定する。
-    #
-    def set_fishing_log
-      @fishing_log = User.current.fishing_logs.find(params[:id])
-    end
+private
+  def set_fishing_log
+    @fishing_log = User.current.fishing_logs.find(params[:id])
+  end
 
-    #
-    # 釣果登録のパラメータ
-    #
-    def fishing_log_params
-      params.require(:fishing_log).permit(:fish_name, :fish_length, :fish_weight, :fishing_point_name, :fishing_method, :fishing_date, :fishing_time, :bait, :fish_image, :comment)
-    end
+  def fishing_log_params
+    params.require(:fishing_log).permit(:fish_name, :fish_length, :fish_weight, :fishing_point_name, :fishing_method, :fishing_date, :fishing_time, :bait, :fish_image, :comment)
+  end
 end

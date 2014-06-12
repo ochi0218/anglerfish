@@ -1,6 +1,3 @@
-# 
-# 潮汐データを管理するオブジェクト
-#
 class Tide < ActiveResource::Base
   # 日付パラメータ（今日データを取得するための値）
   TIDE_GET_DATE_PARAM_VALUE_OF_TODAY = 'today'.freeze
@@ -10,6 +7,7 @@ class Tide < ActiveResource::Base
   TIDE_GET_RESULT_TIDE_LEVEL_UNIT = 'cm'.freeze
 
   attr_accessor :tides, :date, :sun_rise, :sun_set, :moon_rise, :moon_set
+
   alias_attribute :moon_age, :getsurei
   alias_attribute :tide_name, :shiomei
     
@@ -17,16 +15,10 @@ class Tide < ActiveResource::Base
   self.format = :xml
   self.timeout = 20
 
-  # 
-  # 指定の港名から本日の潮汐情報を取得する。
-  #
   def self.today(port)
     self.get TIDE_GET_DATE_PARAM_VALUE_OF_TODAY, port
   end
 
-  # 
-  # 指定の港名から指定の日付の潮汐情報を取得する。
-  #
   def self.get(date, port)
     port_param = port.presence || default_port_name
     date_param = convert_date_param(date)
@@ -35,9 +27,6 @@ class Tide < ActiveResource::Base
     model.tap {|m| bind_addtional_attr m } unless model.nil?
   end
 
-  #
-  # 満潮の潮位データを取得する。
-  #
   def high_tides
     if tides.at(0)[:tide_level] > tides.at(1)[:tide_level]
       [tides.at(0), tides.at(2)]
@@ -46,9 +35,6 @@ class Tide < ActiveResource::Base
     end
   end
 
-  #
-  # 干潮の潮位データを取得する。
-  #
   def low_tides
     if tides.at(0)[:tide_level] < tides.at(1)[:tide_level]
       [tides.at(0), tides.at(2)]
@@ -57,11 +43,8 @@ class Tide < ActiveResource::Base
     end
   end
 
-  private
+private
 
-  # 
-  # 追加で指定した属性に値を格納する。
-  #
   def self.bind_addtional_attr(model)
     model.date = Date.new(model.year.to_i, model.month.to_i, model.day.to_i)
     model.sun_rise= safe_parse_time(model.hinode)
@@ -78,17 +61,10 @@ class Tide < ActiveResource::Base
     }
   end
 
-  #
-  # 初回表示する港名を取得する。
-  #
   def self.default_port_name
     Port.first.name
   end
 
-  #
-  # 表示日付のパラメータを取得する。
-  # パラメータが存在し、日付として解析できるもののみパラメータとして認める。
-  #
   def self.convert_date_param(date)
     return TIDE_GET_DATE_PARAM_VALUE_OF_TODAY unless date.present?
 
@@ -99,9 +75,6 @@ class Tide < ActiveResource::Base
     end
   end
 
-  #
-  # 時刻をパースする
-  #
   def self.safe_parse_time(time)
     return nil unless time.present?
 

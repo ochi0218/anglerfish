@@ -34,25 +34,26 @@
           = image_tag '/assets/weather-icons/svg/Sunset.svg'
         %span= l @tide.sun_set, format: :time_only
     .col-md-4.weather-info
-      - forecast_of_tide_day = @weather.forecast_of_date(@tide.date)
-      - if forecast_of_tide_day.nil?
-        .no-information.well
-          %p= t('.weather_info.no_information_message')
-      - else
-        .forecast
-          %span
-            = image_tag weather_image(forecast_of_tide_day.image.url)
-          %span= forecast_of_tide_day.telop
-        .temprature
-          %span
-            = image_tag '/assets/weather-icons/svg/Thermometer.svg'
-          %span.max= forecast_of_tide_day.temperature.max.nil? ? '-' : forecast_of_tide_day.temperature.max.celsius
-          %span &nbsp;/&nbsp;
-          %span.min= forecast_of_tide_day.temperature.min.nil? ? '-' : forecast_of_tide_day.temperature.min.celsius
-          %span.unit
-            = image_tag '/assets/weather-icons/svg/Degrees-Celcius.svg'
-        .other-link
-          = link_to t('.weather_info.other_link'), @weather.link, target: '_blank'
+      - if @weather.present?
+        - forecast_of_tide_day = @weather.forecast_of_date(@tide.date)
+        - if forecast_of_tide_day.nil?
+          .no-information.well
+            %p= t('.weather_info.no_information_message')
+        - else
+          .forecast
+            %span
+              = image_tag weather_image(forecast_of_tide_day.image.url)
+            %span= forecast_of_tide_day.telop
+          .temprature
+            %span
+              = image_tag '/assets/weather-icons/svg/Thermometer.svg'
+            %span.max= forecast_of_tide_day.temperature.max.nil? ? '-' : forecast_of_tide_day.temperature.max.celsius
+            %span &nbsp;/&nbsp;
+            %span.min= forecast_of_tide_day.temperature.min.nil? ? '-' : forecast_of_tide_day.temperature.min.celsius
+            %span.unit
+              = image_tag '/assets/weather-icons/svg/Degrees-Celcius.svg'
+          .other-link
+            = link_to t('.weather_info.other_link'), @weather.link, target: '_blank'
   %h3= t('.tide_table.high_tide_caption')
   %table.table
     %tr

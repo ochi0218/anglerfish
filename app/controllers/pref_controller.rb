@@ -1,9 +1,6 @@
-#
-# 都道府県ページコントローラ。
-#
 class PrefController < ApplicationController
   def index
-      @region = Region.find(params[:region_id].to_i)
+      @region = Region.find(params[:region_id])
       respond_to do |format|
           format.html { render layout: false }
       end

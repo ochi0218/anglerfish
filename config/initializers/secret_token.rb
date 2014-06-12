@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Anglerfish::Application.config.secret_key_base = 'bd3fc88fccd95cafbeeda5a8aa6335d795d5276b47c33048f1d5bbd2333cba7ba869186cbd96a215f4f238cb04351c771b1b65bebc79e03525cff3357833888e'
+Anglerfish::Application.config.secret_key_base = '15ad2c0eaeea0355fc8dba19ea72bc701766464f353e31ec5510c90fb07f18b49c77d8c88d8a565b80ba606b7b2d1ea395bbc829e3172a135fbcceac4cea29d6'

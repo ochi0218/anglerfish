@@ -16,10 +16,14 @@ class FishingLog < ActiveRecord::Base
   #
   # 検索オブジェクトから検索する。
   #
+  # FIXME whereを利用するのではなく、scopeで書いた方がwhereチェーンが利用できる
+  #  where文でつなげるのでない方が、ActiveRecordっぽい
   def self.search(search, page)
     return page(page) if search.nil?
 
-    FishingLog.where(fish_name_contains(search[:fish_name])).where(fishing_point_name_contains(search[:fishing_point_name])).page(page)
+    FishingLog.where(fish_name_contains(search[:fish_name]))
+    .where(fishing_point_name_contains(search[:fishing_point_name]))
+    .page(page)
   end
 
   private

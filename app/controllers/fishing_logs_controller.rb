@@ -8,6 +8,7 @@ class FishingLogsController < ApplicationController
   # GET /fishing_logs
   # GET /fishing_logs.json
   def index
+    # scopeを利用してメソッドチェーンで書く。
     @fishing_logs = User.current.fishing_logs.search(params[:search], params[:page])
   end
 

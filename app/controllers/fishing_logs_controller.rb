@@ -60,7 +60,7 @@ class FishingLogsController < ApplicationController
 
 private
   def set_fishing_log
-    @fishing_log = User.current.fishing_logs.find(params[:id])
+    @fishing_log = current_user.fishing_logs.find(params[:id])
   end
 
   def fishing_log_params
